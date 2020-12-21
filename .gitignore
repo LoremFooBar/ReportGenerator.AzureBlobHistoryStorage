@@ -29,7 +29,6 @@ modules/
 *.pidb
 *.psess
 *.res
-*.snk
 *.so
 *.suo
 *.tlog
