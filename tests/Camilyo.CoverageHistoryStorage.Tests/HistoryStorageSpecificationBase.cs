@@ -44,7 +44,7 @@ namespace Camilyo.CoverageHistoryStorage.Tests
         {
             base.Given();
 
-            SetupFakeEnvironment();
+            //SetupFakeEnvironment();
 
             var gitRepositoryAccessor = SetupGitRepositoryAccessor();
             BlobContainerClientMock = SetupBlobContainerClientMock();
@@ -101,13 +101,6 @@ namespace Camilyo.CoverageHistoryStorage.Tests
         {
             string blobName = $"{commit.Sha}/{FakeCoverageFileName}";
             yield return BlobsModelFactory.BlobItem(blobName);
-        }
-
-
-        private static void SetupFakeEnvironment()
-        {
-            Environment.SetEnvironmentVariable("COVERAGE_AZURE_STORAGE_WRITE_SAS_TOKEN", "token");
-            Environment.SetEnvironmentVariable("COVERAGE_HISTORY_BLOB_URL", "https://url.com/blob");
         }
     }
 }

@@ -16,12 +16,6 @@ namespace Camilyo.CoverageHistoryStorage
         private readonly IGitRepositoryAccessor _gitRepositoryAccessor;
         private readonly BlobContainerClient _blobContainerClient;
 
-        private readonly Uri _historyContainerUrl = new Uri(
-            GetRequiredEnvironmentVariable("COVERAGE_HISTORY_BLOB_URL"));
-
-        private readonly string _writeAccessSasToken =
-            GetRequiredEnvironmentVariable("COVERAGE_AZURE_STORAGE_WRITE_SAS_TOKEN");
-
         private readonly HttpClient _httpClient;
 
         [ExcludeFromCodeCoverage]
@@ -30,7 +24,9 @@ namespace Camilyo.CoverageHistoryStorage
             _gitRepositoryAccessor = new GitRepositoryAccessor();
             _httpClient = new HttpClient();
 
-            var blobContainerUri = new UriBuilder(_historyContainerUrl) {Query = _writeAccessSasToken}.Uri;
+            var historyContainerUrl = new Uri(GetRequiredEnvironmentVariable("COVERAGE_HISTORY_BLOB_URL"));
+            string writeAccessSasToken = GetRequiredEnvironmentVariable("COVERAGE_AZURE_STORAGE_WRITE_SAS_TOKEN");
+            var blobContainerUri = new UriBuilder(historyContainerUrl) {Query = writeAccessSasToken}.Uri;
             _blobContainerClient = new BlobContainerClient(blobContainerUri);
         }
 
