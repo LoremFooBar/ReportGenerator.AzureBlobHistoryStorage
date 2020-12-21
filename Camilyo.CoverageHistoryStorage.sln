@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camilyo.CoverageHistoryStorage", "src\Camilyo.CoverageHistoryStorage\Camilyo.CoverageHistoryStorage.csproj", "{FD9A6CC7-AFE8-4AF7-8352-077A6F82CD2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camilyo.CoverageHistoryStorage.Tests", "tests\Camilyo.CoverageHistoryStorage.Tests\Camilyo.CoverageHistoryStorage.Tests.csproj", "{1DB98C98-927B-416D-8CFD-D98F9786354E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4BC74147-7FA7-467D-80D5-41035902D8E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9F9BE015-2712-4AB3-AEBB-C01844312D10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{04568215-5D6E-4B68-90AE-C2790F4E4902}"
+ProjectSection(SolutionItems) = preProject
+	.editorconfig = .editorconfig
+	.gitignore = .gitignore
+	bitbucket-pipelines.yml = bitbucket-pipelines.yml
+	Directory.Build.props = Directory.Build.props
+	inspectcode.config = inspectcode.config
+	nuget.config = nuget.config
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD9A6CC7-AFE8-4AF7-8352-077A6F82CD2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9A6CC7-AFE8-4AF7-8352-077A6F82CD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9A6CC7-AFE8-4AF7-8352-077A6F82CD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9A6CC7-AFE8-4AF7-8352-077A6F82CD2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DB98C98-927B-416D-8CFD-D98F9786354E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB98C98-927B-416D-8CFD-D98F9786354E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB98C98-927B-416D-8CFD-D98F9786354E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB98C98-927B-416D-8CFD-D98F9786354E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FD9A6CC7-AFE8-4AF7-8352-077A6F82CD2A} = {4BC74147-7FA7-467D-80D5-41035902D8E3}
+		{1DB98C98-927B-416D-8CFD-D98F9786354E} = {9F9BE015-2712-4AB3-AEBB-C01844312D10}
+	EndGlobalSection
+EndGlobal
