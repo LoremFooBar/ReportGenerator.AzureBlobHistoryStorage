@@ -9,9 +9,15 @@ namespace Camilyo.CoverageHistoryStorage
         [ExcludeFromCodeCoverage]
         public IRepository GetRepository()
         {
-            string? repositoryPath = Repository.Discover(Environment.CurrentDirectory);
-            var repository = new Repository(repositoryPath);
-            return repository;
+            try {
+                string? repositoryPath = Repository.Discover(Environment.CurrentDirectory);
+                var repository = new Repository(repositoryPath);
+                return repository;
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex);
+                throw;
+            }
         }
     }
 }

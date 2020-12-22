@@ -4,7 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using Azure;
 using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
 using Palmmedia.ReportGenerator.Core.Reporting.History;
 
 namespace Camilyo.CoverageHistoryStorage
@@ -56,7 +58,15 @@ namespace Camilyo.CoverageHistoryStorage
 
             var commits = repository.Commits.Take(200).ToList();
             foreach (var commit in commits) {
-                var blobs = _blobContainerClient.GetBlobs(prefix: commit.Sha);
+                Pageable<BlobItem> blobs;
+                try {
+                    blobs = _blobContainerClient.GetBlobs(prefix: commit.Sha);
+                }
+                catch (Exception ex) {
+                    Console.WriteLine(ex);
+                    throw;
+                }
+
                 var blob = blobs.FirstOrDefault();
                 if (blob == null) {
                     continue;
@@ -77,7 +87,13 @@ namespace Camilyo.CoverageHistoryStorage
             using var repository = _gitRepositoryAccessor.GetRepository();
 
             string blobName = $"{repository.Head.Tip.Sha}/{fileName}";
-            _blobContainerClient.UploadBlob(blobName, stream);
+            try {
+                _blobContainerClient.UploadBlob(blobName, stream);
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex);
+                throw;
+            }
         }
     }
 }
