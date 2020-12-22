@@ -5,12 +5,10 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using Azure.Storage.Blobs;
-using JetBrains.Annotations;
 using Palmmedia.ReportGenerator.Core.Reporting.History;
 
 namespace Camilyo.CoverageHistoryStorage
 {
-    [PublicAPI]
     public class AzureBlobHistoryStorage : IHistoryStorage
     {
         private readonly IGitRepositoryAccessor _gitRepositoryAccessor;
@@ -21,15 +19,29 @@ namespace Camilyo.CoverageHistoryStorage
         [ExcludeFromCodeCoverage]
         public AzureBlobHistoryStorage()
         {
+            var commandLineArgumentsParser = new CommandLineArgumentsParser();
+            var commandLineArguments = commandLineArgumentsParser.GetCommandLineArguments();
+            if (!commandLineArguments.TryGetValue("HISTORYCONTAINERURL", out string? historyContainerUrlArgument)) {
+                Console.WriteLine("Error - missing argument -historycontainerurl");
+                throw new ArgumentException("missing argument -historycontainerurl");
+            }
+
+            if (!commandLineArguments.TryGetValue("WRITESASTOKEN", out string? writeAccessSasTokenArgument)) {
+                Console.WriteLine("Error - missing argument -writesastoken");
+                throw new ArgumentException("missing argument -writesastoken");
+            }
+
             _gitRepositoryAccessor = new GitRepositoryAccessor();
             _httpClient = new HttpClient();
 
-            var historyContainerUrl = new Uri(GetRequiredEnvironmentVariable("COVERAGE_HISTORY_BLOB_URL"));
-            string writeAccessSasToken = GetRequiredEnvironmentVariable("COVERAGE_AZURE_STORAGE_WRITE_SAS_TOKEN");
-            var blobContainerUri = new UriBuilder(historyContainerUrl) {Query = writeAccessSasToken}.Uri;
+            var historyContainerUrl = new Uri(historyContainerUrlArgument);
+            var blobContainerUri = new UriBuilder(historyContainerUrl) {Query = writeAccessSasTokenArgument}.Uri;
             _blobContainerClient = new BlobContainerClient(blobContainerUri);
         }
 
+        /// <summary>
+        /// Initialize new instance of <see cref="AzureBlobHistoryStorage"/> for tests only
+        /// </summary>
         public AzureBlobHistoryStorage(IGitRepositoryAccessor gitRepositoryAccessor,
             BlobContainerClient blobContainerClient, HttpClient httpClient)
         {
@@ -67,9 +79,5 @@ namespace Camilyo.CoverageHistoryStorage
             string blobName = $"{repository.Head.Tip.Sha}/{fileName}";
             _blobContainerClient.UploadBlob(blobName, stream);
         }
-
-        private static string GetRequiredEnvironmentVariable(string variableName) =>
-            Environment.GetEnvironmentVariable(variableName) ??
-            throw new RequiredEnvironmentVariableNotFoundException(variableName);
     }
 }
