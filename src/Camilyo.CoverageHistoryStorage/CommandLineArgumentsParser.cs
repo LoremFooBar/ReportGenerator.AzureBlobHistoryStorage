@@ -11,7 +11,7 @@ namespace Camilyo.CoverageHistoryStorage
             var namedArguments = new Dictionary<string, string>();
 
             foreach (var arg in Environment.GetCommandLineArgs()) {
-                var match = Regex.Match(arg, "-(?<key>\\w{2,}):(?<value>.+)");
+                var match = Regex.Match(arg, "--(?<key>\\w{2,}):(?<value>.+)");
 
                 if (match.Success) {
                     namedArguments[match.Groups["key"].Value.ToUpperInvariant()] = match.Groups["value"].Value;
