@@ -50,7 +50,7 @@ namespace Camilyo.CoverageHistoryStorage
         {
             using var repository = _gitRepositoryAccessor.GetRepository();
 
-            var commits = repository.Commits.Take(200).ToList();
+            var commits = repository.Commits.Take(50).ToList();
             foreach (var commit in commits) {
                 Pageable<BlobItem> blobs;
                 try {
