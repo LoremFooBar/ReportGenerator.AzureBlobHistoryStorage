@@ -15,29 +15,22 @@ namespace Camilyo.CoverageHistoryStorage
     {
         private readonly IGitRepositoryAccessor _gitRepositoryAccessor;
         private readonly BlobContainerClient _blobContainerClient;
-
         private readonly HttpClient _httpClient;
+        private readonly string _repositoryName;
 
         [ExcludeFromCodeCoverage]
         public AzureBlobHistoryStorage()
         {
             var commandLineArgumentsParser = new CommandLineArgumentsParser();
             var commandLineArguments = commandLineArgumentsParser.GetCommandLineArguments();
-            if (!commandLineArguments.TryGetValue("HISTORYCONTAINERURL", out string? historyContainerUrlArgument)) {
-                Console.WriteLine("Error - missing argument -historycontainerurl");
-                throw new ArgumentException("missing argument -historycontainerurl");
-            }
+            var options = new CommandLineOptions(commandLineArguments);
 
-            if (!commandLineArguments.TryGetValue("WRITESASTOKEN", out string? writeAccessSasTokenArgument)) {
-                Console.WriteLine("Error - missing argument -writesastoken");
-                throw new ArgumentException("missing argument -writesastoken");
-            }
-
+            _repositoryName = options.RepositoryName;
             _gitRepositoryAccessor = new GitRepositoryAccessor();
             _httpClient = new HttpClient();
 
-            var historyContainerUrl = new Uri(historyContainerUrlArgument);
-            var blobContainerUri = new UriBuilder(historyContainerUrl) {Query = writeAccessSasTokenArgument}.Uri;
+            var historyContainerUrl = new Uri(options.HistoryContainerUrl);
+            var blobContainerUri = new UriBuilder(historyContainerUrl) {Query = options.WriteSasToken}.Uri;
             _blobContainerClient = new BlobContainerClient(blobContainerUri);
         }
 
@@ -50,6 +43,7 @@ namespace Camilyo.CoverageHistoryStorage
             _gitRepositoryAccessor = gitRepositoryAccessor;
             _blobContainerClient = blobContainerClient;
             _httpClient = httpClient;
+            _repositoryName = "test-repo-name";
         }
 
         public IEnumerable<string> GetHistoryFilePaths()
@@ -60,7 +54,7 @@ namespace Camilyo.CoverageHistoryStorage
             foreach (var commit in commits) {
                 Pageable<BlobItem> blobs;
                 try {
-                    blobs = _blobContainerClient.GetBlobs(prefix: commit.Sha);
+                    blobs = _blobContainerClient.GetBlobs(prefix: $"{_repositoryName}/{commit.Sha}");
                 }
                 catch (Exception ex) {
                     Console.WriteLine(ex);
@@ -86,7 +80,7 @@ namespace Camilyo.CoverageHistoryStorage
         {
             using var repository = _gitRepositoryAccessor.GetRepository();
 
-            string blobName = $"{repository.Head.Tip.Sha}/{fileName}";
+            string blobName = $"{_repositoryName}/{repository.Head.Tip.Sha}/{fileName}";
             try {
                 _blobContainerClient.UploadBlob(blobName, stream);
             }
@@ -94,6 +88,11 @@ namespace Camilyo.CoverageHistoryStorage
                 Console.WriteLine(ex);
                 throw;
             }
+        }
+
+        ~AzureBlobHistoryStorage()
+        {
+            _httpClient.Dispose();
         }
     }
 }
