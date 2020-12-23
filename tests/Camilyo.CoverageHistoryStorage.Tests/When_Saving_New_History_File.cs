@@ -21,7 +21,7 @@ namespace Camilyo.CoverageHistoryStorage.Tests
         public void It_Should_Upload_Blob()
         {
             BlobContainerClientMock.Verify(client =>
-                client.UploadBlob($"{FakeHead.Tip.Sha}/{FakeCoverageFileName}", It.IsAny<Stream>(),
+                client.UploadBlob($"{RepositoryName}/{FakeHead.Tip.Sha}/{FakeCoverageFileName}", It.IsAny<Stream>(),
                     It.IsAny<CancellationToken>()), Times.Once);
         }
     }

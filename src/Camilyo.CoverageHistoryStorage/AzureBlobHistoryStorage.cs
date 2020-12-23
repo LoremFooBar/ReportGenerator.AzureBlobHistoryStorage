@@ -13,8 +13,8 @@ namespace Camilyo.CoverageHistoryStorage
 {
     public class AzureBlobHistoryStorage : IHistoryStorage
     {
-        private readonly IGitRepositoryAccessor _gitRepositoryAccessor;
         private readonly BlobContainerClient _blobContainerClient;
+        private readonly IGitRepositoryAccessor _gitRepositoryAccessor;
         private readonly HttpClient _httpClient;
         private readonly string _repositoryName;
 
@@ -35,15 +35,15 @@ namespace Camilyo.CoverageHistoryStorage
         }
 
         /// <summary>
-        /// Initialize new instance of <see cref="AzureBlobHistoryStorage"/> for tests only
+        /// Initialize new instance of <see cref="AzureBlobHistoryStorage" /> for tests only
         /// </summary>
         public AzureBlobHistoryStorage(IGitRepositoryAccessor gitRepositoryAccessor,
-            BlobContainerClient blobContainerClient, HttpClient httpClient)
+            BlobContainerClient blobContainerClient, HttpClient httpClient, string repositoryName)
         {
             _gitRepositoryAccessor = gitRepositoryAccessor;
             _blobContainerClient = blobContainerClient;
             _httpClient = httpClient;
-            _repositoryName = "test-repo-name";
+            _repositoryName = repositoryName;
         }
 
         public IEnumerable<string> GetHistoryFilePaths()
@@ -92,7 +92,12 @@ namespace Camilyo.CoverageHistoryStorage
 
         ~AzureBlobHistoryStorage()
         {
-            _httpClient.Dispose();
+            try {
+                _httpClient.Dispose();
+            }
+            catch {
+                // ignored
+            }
         }
     }
 }

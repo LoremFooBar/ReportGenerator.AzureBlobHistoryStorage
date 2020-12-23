@@ -18,13 +18,14 @@ namespace Camilyo.CoverageHistoryStorage.Tests
     {
         protected const string FakeCoverageFileName = "fakeFile.xml";
         protected const string FakeCoverageFileContent = "file_content";
+        protected const string RepositoryName = "testRepoName";
         protected readonly Uri ContainerUri = new Uri("https://storage.com/history?sas_token");
 
         private IEnumerable<Commit> _fakeCommitLog;
+        protected Mock<BlobContainerClient> BlobContainerClientMock;
 
         protected Branch FakeHead;
         protected AzureBlobHistoryStorage HistoryStorage;
-        protected Mock<BlobContainerClient> BlobContainerClientMock;
 
         protected override void BeforeAllTests()
         {
@@ -44,14 +45,13 @@ namespace Camilyo.CoverageHistoryStorage.Tests
         {
             base.Given();
 
-            //SetupFakeEnvironment();
-
             var gitRepositoryAccessor = SetupGitRepositoryAccessor();
             BlobContainerClientMock = SetupBlobContainerClientMock();
             var httpClient = SetupHttpClient();
 
             HistoryStorage =
-                new AzureBlobHistoryStorage(gitRepositoryAccessor, BlobContainerClientMock.Object, httpClient);
+                new AzureBlobHistoryStorage(gitRepositoryAccessor, BlobContainerClientMock.Object, httpClient,
+                    RepositoryName);
         }
 
         private HttpClient SetupHttpClient()
@@ -70,10 +70,12 @@ namespace Camilyo.CoverageHistoryStorage.Tests
             var blobContainerClientMock = new Mock<BlobContainerClient>();
 
             foreach (var commit in _fakeCommitLog) {
-                var blobItems = Mock.Of<Pageable<BlobItem>>(items => items.GetEnumerator() == BlobEnumerator(commit));
+                var blobItems =
+                    Mock.Of<Pageable<BlobItem>>(items => items.GetEnumerator() == FakeBlobEnumerator(commit));
                 blobContainerClientMock
                     .Setup(client =>
-                        client.GetBlobs(BlobTraits.None, BlobStates.None, commit.Sha, CancellationToken.None))
+                        client.GetBlobs(BlobTraits.None, BlobStates.None, $"{RepositoryName}/{commit.Sha}",
+                            CancellationToken.None))
                     .Returns(blobItems);
             }
 
@@ -97,9 +99,9 @@ namespace Camilyo.CoverageHistoryStorage.Tests
         }
 
 
-        private static IEnumerator<BlobItem> BlobEnumerator(Commit commit)
+        private static IEnumerator<BlobItem> FakeBlobEnumerator(Commit commit)
         {
-            string blobName = $"{commit.Sha}/{FakeCoverageFileName}";
+            string blobName = $"{RepositoryName}/{commit.Sha}/{FakeCoverageFileName}";
             yield return BlobsModelFactory.BlobItem(blobName);
         }
     }

@@ -28,9 +28,12 @@ namespace Camilyo.CoverageHistoryStorage.Tests
                 u.Host == ContainerUri.Host && u.Query == ContainerUri.Query && u.Scheme == ContainerUri.Scheme &&
                 u.Uri.IsDefaultPort);
             uris.Should().SatisfyRespectively(
-                first => first.Path.Should().Be($"{ContainerUri.AbsolutePath}/commit1/{FakeCoverageFileName}"),
-                second => second.Path.Should().Be($"{ContainerUri.AbsolutePath}/commit2/{FakeCoverageFileName}"),
-                third => third.Path.Should().Be($"{ContainerUri.AbsolutePath}/commit3/{FakeCoverageFileName}"));
+                first => first.Path.Should()
+                    .Be($"{ContainerUri.AbsolutePath}/{RepositoryName}/commit1/{FakeCoverageFileName}"),
+                second => second.Path.Should()
+                    .Be($"{ContainerUri.AbsolutePath}/{RepositoryName}/commit2/{FakeCoverageFileName}"),
+                third => third.Path.Should()
+                    .Be($"{ContainerUri.AbsolutePath}/{RepositoryName}/commit3/{FakeCoverageFileName}"));
         }
     }
 }

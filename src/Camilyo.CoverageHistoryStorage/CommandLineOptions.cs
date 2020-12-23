@@ -6,10 +6,6 @@ namespace Camilyo.CoverageHistoryStorage
 {
     public class CommandLineOptions
     {
-        public string HistoryContainerUrl { get; }
-        public string WriteSasToken { get; }
-        public string RepositoryName { get; }
-
         public CommandLineOptions(IReadOnlyDictionary<string, string> commandLineArguments)
         {
             if (!commandLineArguments.TryGetValue("HISTORYCONTAINERURL", out string? historyContainerUrl)) {
@@ -30,17 +26,21 @@ namespace Camilyo.CoverageHistoryStorage
             WriteSasToken = sasTokenArgument;
             RepositoryName = (repositoryNameArgument ?? bitbucketRepoSlug)!;
         }
+
+        public string HistoryContainerUrl { get; }
+        public string WriteSasToken { get; }
+        public string RepositoryName { get; }
     }
 
     [PublicAPI]
     public sealed class CommandLineArgumentMissingException : Exception
     {
-        public string ArgumentName { get; }
-
         public CommandLineArgumentMissingException(string argumentName) : base($"missing argument {argumentName}")
         {
             ArgumentName = argumentName;
             Console.WriteLine(Message);
         }
+
+        public string ArgumentName { get; }
     }
 }
