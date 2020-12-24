@@ -59,7 +59,7 @@ namespace Camilyo.CoverageHistoryStorage
                     throw;
                 }
 
-                var blob = blobs.FirstOrDefault();
+                var blob = blobs.LastOrDefault();
                 if (blob == null) {
                     continue;
                 }
