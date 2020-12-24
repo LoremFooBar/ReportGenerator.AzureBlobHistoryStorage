@@ -12,20 +12,17 @@
           "System.Text.Json": "4.6.0"
         }
       },
+      "CliWrap.Signed": {
+        "type": "Direct",
+        "requested": "[3.2.4, )",
+        "resolved": "3.2.4",
+        "contentHash": "GMOwNnjDku6MnnbEmWryR11XsWthgIEKTUdx3BDGEKhndgxyf02ujCB8TXp4G0dspjznzEpV2LjRMqWALbA6KA=="
+      },
       "JetBrains.Annotations": {
         "type": "Direct",
         "requested": "[2020.3.0, )",
         "resolved": "2020.3.0",
         "contentHash": "FnX06vtxuoZnhZdR6UHt5kJ7HUC/syODfGLnhPDn1x5sXvvepNyCl4jMtPUzJfsPWh7q0Jo+AIYz5xaVbbyikA=="
-      },
-      "LibGit2Sharp": {
-        "type": "Direct",
-        "requested": "[0.26.2, )",
-        "resolved": "0.26.2",
-        "contentHash": "qHLhuI8VEtMf7jiurT/Ypquh37S6ngllCx+aq9uqOY2evok7Fb2AzhJgvNctsXOzHaJwveBs+30sPQJFn/pISg==",
-        "dependencies": {
-          "LibGit2Sharp.NativeBinaries": "[2.0.306]"
-        }
       },
       "ReportGenerator.Core": {
         "type": "Direct",
@@ -68,11 +65,6 @@
         "type": "Transitive",
         "resolved": "1.0.0-rc",
         "contentHash": "zXIAskCLavRd2xgimFbHvn0uzQQs0f5r4xVFUcHVmntKjnwQCNdWzCOm+nG5L34dRYxgXqxC2vv1vpcRlL2uGA=="
-      },
-      "LibGit2Sharp.NativeBinaries": {
-        "type": "Transitive",
-        "resolved": "2.0.306",
-        "contentHash": "LY9nyPE2X/eLl69ttuDPFFlKR8b5KXlqYej1YR1YmqmhF8Izo+vPX90q5ouOO5YGCf5d4lDUOC0x2yMWw00P7Q=="
       },
       "McMaster.NETCore.Plugins": {
         "type": "Transitive",

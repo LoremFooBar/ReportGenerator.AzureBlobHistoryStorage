@@ -12,7 +12,7 @@ namespace Camilyo.CoverageHistoryStorage.Tests
         {
             base.When();
 
-            var historyFilePaths = HistoryStorage.GetHistoryFilePaths();
+            var historyFilePaths = HistoryStorage.GetHistoryFilePaths().ToList();
             var stream = HistoryStorage.LoadFile(historyFilePaths.First());
             HistoryStorage.SaveFile(stream, FakeCoverageFileName);
         }
@@ -21,7 +21,7 @@ namespace Camilyo.CoverageHistoryStorage.Tests
         public void It_Should_Upload_Blob()
         {
             BlobContainerClientMock.Verify(client =>
-                client.UploadBlob($"{RepositoryName}/{FakeHead.Tip.Sha}/{FakeCoverageFileName}", It.IsAny<Stream>(),
+                client.UploadBlob($"{RepositoryName}/{FakeHeadCommitId}/{FakeCoverageFileName}", It.IsAny<Stream>(),
                     It.IsAny<CancellationToken>()), Times.Once);
         }
     }

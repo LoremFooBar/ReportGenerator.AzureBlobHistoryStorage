@@ -123,23 +123,15 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "CliWrap.Signed": {
+        "type": "Transitive",
+        "resolved": "3.2.4",
+        "contentHash": "GMOwNnjDku6MnnbEmWryR11XsWthgIEKTUdx3BDGEKhndgxyf02ujCB8TXp4G0dspjznzEpV2LjRMqWALbA6KA=="
+      },
       "DotNetConfig": {
         "type": "Transitive",
         "resolved": "1.0.0-rc",
         "contentHash": "zXIAskCLavRd2xgimFbHvn0uzQQs0f5r4xVFUcHVmntKjnwQCNdWzCOm+nG5L34dRYxgXqxC2vv1vpcRlL2uGA=="
-      },
-      "LibGit2Sharp": {
-        "type": "Transitive",
-        "resolved": "0.26.2",
-        "contentHash": "qHLhuI8VEtMf7jiurT/Ypquh37S6ngllCx+aq9uqOY2evok7Fb2AzhJgvNctsXOzHaJwveBs+30sPQJFn/pISg==",
-        "dependencies": {
-          "LibGit2Sharp.NativeBinaries": "[2.0.306]"
-        }
-      },
-      "LibGit2Sharp.NativeBinaries": {
-        "type": "Transitive",
-        "resolved": "2.0.306",
-        "contentHash": "LY9nyPE2X/eLl69ttuDPFFlKR8b5KXlqYej1YR1YmqmhF8Izo+vPX90q5ouOO5YGCf5d4lDUOC0x2yMWw00P7Q=="
       },
       "McMaster.NETCore.Plugins": {
         "type": "Transitive",
@@ -1099,7 +1091,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Storage.Blobs": "12.7.0",
-          "LibGit2Sharp": "0.26.2",
+          "CliWrap.Signed": "3.2.4",
           "ReportGenerator.Core": "4.8.2"
         }
       }

@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading;
+using System.Threading.Tasks;
 using Azure;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using Camilyo.Framework.Testing;
-using LibGit2Sharp;
 using Moq;
 using RichardSzalay.MockHttp;
 
@@ -21,25 +21,13 @@ namespace Camilyo.CoverageHistoryStorage.Tests
         protected const string RepositoryName = "testRepoName";
         protected readonly Uri ContainerUri = new Uri("https://storage.com/history?sas_token");
 
-        private IEnumerable<Commit> _fakeCommitLog;
         protected Mock<BlobContainerClient> BlobContainerClientMock;
 
-        protected Branch FakeHead;
         protected AzureBlobHistoryStorage HistoryStorage;
 
-        protected override void BeforeAllTests()
-        {
-            base.BeforeAllTests();
+        private static List<string> FakeCommitIds { get; } = new List<string> {"commit1", "commit2", "commit3"};
+        protected static string FakeHeadCommitId { get; } = FakeCommitIds.First();
 
-            _fakeCommitLog = new[]
-            {
-                Mock.Of<Commit>(commit => commit.Sha == "commit1"),
-                Mock.Of<Commit>(commit => commit.Sha == "commit2"),
-                Mock.Of<Commit>(commit => commit.Sha == "commit3")
-            }.AsEnumerable();
-
-            FakeHead = Mock.Of<Branch>(b => b.Tip == _fakeCommitLog.First());
-        }
 
         protected override void Given()
         {
@@ -69,12 +57,12 @@ namespace Camilyo.CoverageHistoryStorage.Tests
         {
             var blobContainerClientMock = new Mock<BlobContainerClient>();
 
-            foreach (var commit in _fakeCommitLog) {
+            foreach (string commitId in FakeCommitIds) {
                 var blobItems =
-                    Mock.Of<Pageable<BlobItem>>(items => items.GetEnumerator() == FakeBlobEnumerator(commit));
+                    Mock.Of<Pageable<BlobItem>>(items => items.GetEnumerator() == FakeBlobEnumerator(commitId));
                 blobContainerClientMock
                     .Setup(client =>
-                        client.GetBlobs(BlobTraits.None, BlobStates.None, $"{RepositoryName}/{commit.Sha}",
+                        client.GetBlobs(BlobTraits.None, BlobStates.None, $"{RepositoryName}/{commitId}",
                             CancellationToken.None))
                     .Returns(blobItems);
             }
@@ -89,19 +77,20 @@ namespace Camilyo.CoverageHistoryStorage.Tests
             return blobContainerClientMock;
         }
 
-        private IGitRepositoryAccessor SetupGitRepositoryAccessor()
+        private static IGitRepositoryAccessor SetupGitRepositoryAccessor()
         {
-            var commitLog = Mock.Of<IQueryableCommitLog>(log => log.GetEnumerator() == _fakeCommitLog.GetEnumerator());
-            var repo = Mock.Of<IRepository>(repository =>
-                repository.Commits == commitLog && repository.Head == FakeHead);
-            var gitRepositoryAccessor = Mock.Of<IGitRepositoryAccessor>(accessor => accessor.GetRepository() == repo);
+            var fakeCommitIdsTask = Task.FromResult(FakeCommitIds.AsEnumerable());
+            var fakeHeadCommitIdTask = Task.FromResult(FakeHeadCommitId);
+
+            var gitRepositoryAccessor = Mock.Of<IGitRepositoryAccessor>(accessor =>
+                accessor.GetCommitIdsAsync(It.IsAny<int>()) == fakeCommitIdsTask
+                && accessor.GetHeadCommitIdAsync() == fakeHeadCommitIdTask);
             return gitRepositoryAccessor;
         }
 
-
-        private static IEnumerator<BlobItem> FakeBlobEnumerator(Commit commit)
+        private static IEnumerator<BlobItem> FakeBlobEnumerator(string commitId)
         {
-            string blobName = $"{RepositoryName}/{commit.Sha}/{FakeCoverageFileName}";
+            string blobName = $"{RepositoryName}/{commitId}/{FakeCoverageFileName}";
             yield return BlobsModelFactory.BlobItem(blobName);
         }
     }

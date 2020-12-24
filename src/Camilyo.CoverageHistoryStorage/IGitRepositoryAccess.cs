@@ -1,9 +1,12 @@
-﻿using LibGit2Sharp;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Camilyo.CoverageHistoryStorage
 {
     public interface IGitRepositoryAccessor
     {
-        public IRepository GetRepository();
+        public Task<IEnumerable<string>> GetCommitIdsAsync(int numOfCommits);
+
+        public Task<string> GetHeadCommitIdAsync();
     }
 }

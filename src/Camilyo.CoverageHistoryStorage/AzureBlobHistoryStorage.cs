@@ -48,13 +48,11 @@ namespace Camilyo.CoverageHistoryStorage
 
         public IEnumerable<string> GetHistoryFilePaths()
         {
-            using var repository = _gitRepositoryAccessor.GetRepository();
-
-            var commits = repository.Commits.Take(50).ToList();
-            foreach (var commit in commits) {
+            var commitIds = _gitRepositoryAccessor.GetCommitIdsAsync(50).GetAwaiter().GetResult();
+            foreach (var commitId in commitIds) {
                 Pageable<BlobItem> blobs;
                 try {
-                    blobs = _blobContainerClient.GetBlobs(prefix: $"{_repositoryName}/{commit.Sha}");
+                    blobs = _blobContainerClient.GetBlobs(prefix: $"{_repositoryName}/{commitId}");
                 }
                 catch (Exception ex) {
                     Console.WriteLine(ex);
@@ -78,9 +76,8 @@ namespace Camilyo.CoverageHistoryStorage
 
         public void SaveFile(Stream stream, string fileName)
         {
-            using var repository = _gitRepositoryAccessor.GetRepository();
-
-            string blobName = $"{_repositoryName}/{repository.Head.Tip.Sha}/{fileName}";
+            string headCommitId = _gitRepositoryAccessor.GetHeadCommitIdAsync().GetAwaiter().GetResult();
+            string blobName = $"{_repositoryName}/{headCommitId}/{fileName}";
             try {
                 _blobContainerClient.UploadBlob(blobName, stream);
             }
@@ -90,6 +87,7 @@ namespace Camilyo.CoverageHistoryStorage
             }
         }
 
+        [ExcludeFromCodeCoverage]
         ~AzureBlobHistoryStorage()
         {
             try {
