@@ -11,6 +11,22 @@ namespace Camilyo.CoverageHistoryStorage.Tests.CommandLineOptionsTests
         private CommandLineArgumentMissingException _exception2;
         private CommandLineArgumentMissingException _exception3;
         private CommandLineArgumentMissingException _exception4;
+        private string _bitbucketRepoSlug;
+
+        protected override void BeforeAllTests()
+        {
+            base.BeforeAllTests();
+
+            _bitbucketRepoSlug = Environment.GetEnvironmentVariable("BITBUCKET_REPO_SLUG");
+            Environment.SetEnvironmentVariable("BITBUCKET_REPO_SLUG", null);
+        }
+
+        protected override void AfterAllTests()
+        {
+            base.AfterAllTests();
+
+            Environment.SetEnvironmentVariable("BITBUCKET_REPO_SLUG", _bitbucketRepoSlug);
+        }
 
         protected override void When()
         {
