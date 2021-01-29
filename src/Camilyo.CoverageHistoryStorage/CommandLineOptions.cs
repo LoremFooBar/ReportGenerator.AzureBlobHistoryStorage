@@ -19,7 +19,7 @@ namespace Camilyo.CoverageHistoryStorage
             string? bitbucketRepoSlug = Environment.GetEnvironmentVariable("BITBUCKET_REPO_SLUG");
             if (!commandLineArguments.TryGetValue("REPOSITORYNAME", out string? repositoryNameArgument) &&
                 string.IsNullOrWhiteSpace(bitbucketRepoSlug)) {
-                throw new CommandLineArgumentMissingException("--REPOSITORYNAME");
+                throw new CommandLineArgumentMissingException("--repositoryname");
             }
 
             HistoryContainerUrl = historyContainerUrl;

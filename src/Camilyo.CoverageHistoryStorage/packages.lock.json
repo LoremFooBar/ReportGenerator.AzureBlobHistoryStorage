@@ -12,11 +12,11 @@
           "System.Text.Json": "4.6.0"
         }
       },
-      "CliWrap.Signed": {
+      "CliWrap": {
         "type": "Direct",
-        "requested": "[3.2.4, )",
-        "resolved": "3.2.4",
-        "contentHash": "GMOwNnjDku6MnnbEmWryR11XsWthgIEKTUdx3BDGEKhndgxyf02ujCB8TXp4G0dspjznzEpV2LjRMqWALbA6KA=="
+        "requested": "[3.3.0, )",
+        "resolved": "3.3.0",
+        "contentHash": "imhOhs2fLrIva3coUXCh4L5lUSN6XCGF4+20qmPW2ncDlqQphk8kKxKwkoC3FNNPd9wW+RnXjlxBMlN21dQiHg=="
       },
       "JetBrains.Annotations": {
         "type": "Direct",
