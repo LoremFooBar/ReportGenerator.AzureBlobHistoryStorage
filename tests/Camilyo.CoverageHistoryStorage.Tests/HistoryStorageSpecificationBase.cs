@@ -25,7 +25,12 @@ namespace Camilyo.CoverageHistoryStorage.Tests
 
         protected AzureBlobHistoryStorage HistoryStorage;
 
-        private static List<string> FakeCommitIds { get; } = new List<string> {"commit1", "commit2", "commit3"};
+        protected static List<string> FakeCommitIds { get; } = new List<string>
+        {
+            "24e014a19f8af59ddf7b0adb3d12dbacbcb37465", "12b8122e490b0ebed975ca0f2eaead37b16a9705",
+            "1b6cfaed161d810ab647c0a4f737dfd2c15d286e"
+        };
+
         protected static string FakeHeadCommitId { get; } = FakeCommitIds.First();
 
 
