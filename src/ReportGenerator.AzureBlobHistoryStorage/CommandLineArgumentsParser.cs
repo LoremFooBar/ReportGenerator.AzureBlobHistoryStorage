@@ -2,9 +2,9 @@
 
 namespace ReportGenerator.AzureBlobHistoryStorage;
 
-public class CommandLineArgumentsParser : ICommandLineArgumentsParser
+public static class CommandLineArgumentsParser
 {
-    public Dictionary<string, string> GetCommandLineArguments()
+    public static Dictionary<string, string> GetCommandLineArguments()
     {
         var namedArguments = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 

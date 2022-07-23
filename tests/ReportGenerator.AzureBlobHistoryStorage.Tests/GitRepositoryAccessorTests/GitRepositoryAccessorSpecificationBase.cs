@@ -5,7 +5,7 @@ namespace ReportGenerator.AzureBlobHistoryStorage.Tests.GitRepositoryAccessorTes
 
 public class GitRepositoryAccessorSpecificationBase : SpecificationBase
 {
-    protected GitRepositoryAccessor GitRepositoryAccessor { get; set; }
+    protected GitRepositoryAccessor GitRepositoryAccessor { get; private set; }
     private DirectoryInfo SourceDir { get; set; }
 
     protected override async Task BeforeAllTestsAsync()

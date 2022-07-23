@@ -16,8 +16,7 @@ public class AzureBlobHistoryStorage : IHistoryStorage
     [ExcludeFromCodeCoverage]
     public AzureBlobHistoryStorage()
     {
-        var commandLineArgumentsParser = new CommandLineArgumentsParser();
-        var commandLineArguments = commandLineArgumentsParser.GetCommandLineArguments();
+        var commandLineArguments = CommandLineArgumentsParser.GetCommandLineArguments();
         var options = new CommandLineOptions(commandLineArguments);
 
         _repositoryName = options.RepositoryName;
