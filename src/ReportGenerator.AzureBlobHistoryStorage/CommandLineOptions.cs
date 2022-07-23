@@ -12,15 +12,12 @@ public class CommandLineOptions
         if (!commandLineArguments.TryGetValue("WRITESASTOKEN", out string? sasTokenArgument))
             throw new CommandLineArgumentMissingException("--writesastoken");
 
-        string? bitbucketRepoSlug = Environment.GetEnvironmentVariable("BITBUCKET_REPO_SLUG");
-
-        if (!commandLineArguments.TryGetValue("REPOSITORYNAME", out string? repositoryNameArgument) &&
-            string.IsNullOrWhiteSpace(bitbucketRepoSlug))
+        if (!commandLineArguments.TryGetValue("REPOSITORYNAME", out string? repositoryNameArgument))
             throw new CommandLineArgumentMissingException("--repositoryname");
 
         HistoryContainerUrl = historyContainerUrl;
         WriteSasToken = sasTokenArgument;
-        RepositoryName = (repositoryNameArgument ?? bitbucketRepoSlug)!;
+        RepositoryName = repositoryNameArgument;
     }
 
     public string HistoryContainerUrl { get; }

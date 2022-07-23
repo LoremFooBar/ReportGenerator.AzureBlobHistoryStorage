@@ -5,26 +5,10 @@ namespace ReportGenerator.AzureBlobHistoryStorage.Tests.CommandLineOptionsTests;
 
 public class When_Calling_Constructor_With_Required_Arguments_Missing : SpecificationBase
 {
-    private string _bitbucketRepoSlug;
     private CommandLineArgumentMissingException _exception1;
     private CommandLineArgumentMissingException _exception2;
     private CommandLineArgumentMissingException _exception3;
     private CommandLineArgumentMissingException _exception4;
-
-    protected override void BeforeAllTests()
-    {
-        base.BeforeAllTests();
-
-        _bitbucketRepoSlug = Environment.GetEnvironmentVariable("BITBUCKET_REPO_SLUG");
-        Environment.SetEnvironmentVariable("BITBUCKET_REPO_SLUG", null);
-    }
-
-    protected override void AfterAllTests()
-    {
-        base.AfterAllTests();
-
-        Environment.SetEnvironmentVariable("BITBUCKET_REPO_SLUG", _bitbucketRepoSlug);
-    }
 
     protected override void When()
     {
