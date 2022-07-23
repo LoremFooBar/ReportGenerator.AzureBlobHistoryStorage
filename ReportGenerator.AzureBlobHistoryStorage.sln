@@ -15,6 +15,7 @@ ProjectSection(SolutionItems) = preProject
 	Directory.Build.props = Directory.Build.props
 	inspectcode.config = inspectcode.config
 	README.md = README.md
+	global.json = global.json
 EndProjectSection
 EndProject
 Global

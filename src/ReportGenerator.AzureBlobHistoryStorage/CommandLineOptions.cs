@@ -7,13 +7,13 @@ public class CommandLineOptions
     public CommandLineOptions(IReadOnlyDictionary<string, string> commandLineArguments)
     {
         if (!commandLineArguments.TryGetValue("HISTORYCONTAINERURL", out string? historyContainerUrl))
-            throw new CommandLineArgumentMissingException("--historycontainerurl");
+            throw new CommandLineArgumentMissingException("-historycontainerurl");
 
         if (!commandLineArguments.TryGetValue("WRITESASTOKEN", out string? sasTokenArgument))
-            throw new CommandLineArgumentMissingException("--writesastoken");
+            throw new CommandLineArgumentMissingException("-writesastoken");
 
         if (!commandLineArguments.TryGetValue("REPOSITORYNAME", out string? repositoryNameArgument))
-            throw new CommandLineArgumentMissingException("--repositoryname");
+            throw new CommandLineArgumentMissingException("-repositoryname");
 
         HistoryContainerUrl = historyContainerUrl;
         WriteSasToken = sasTokenArgument;
