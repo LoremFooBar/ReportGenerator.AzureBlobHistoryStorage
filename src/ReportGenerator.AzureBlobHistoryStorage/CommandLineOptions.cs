@@ -6,6 +6,11 @@ public class CommandLineOptions
 {
     public CommandLineOptions(IReadOnlyDictionary<string, string> commandLineArguments)
     {
+        commandLineArguments.TryGetValue("DEBUG", out string? debug);
+        Debug = debug?.Equals("true", StringComparison.OrdinalIgnoreCase) == true;
+
+        Console.WriteLine(Debug ? $"command line arguments: {string.Join(" | ", commandLineArguments)}" : "NO DEBUG");
+
         if (!commandLineArguments.TryGetValue("HISTORYCONTAINERURL", out string? historyContainerUrl))
             throw new CommandLineArgumentMissingException("-historycontainerurl");
 
@@ -23,6 +28,7 @@ public class CommandLineOptions
     public string HistoryContainerUrl { get; }
     public string WriteSasToken { get; }
     public string RepositoryName { get; }
+    public bool Debug { get; }
 }
 
 [PublicAPI]

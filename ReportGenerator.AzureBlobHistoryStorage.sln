@@ -17,6 +17,7 @@ ProjectSection(SolutionItems) = preProject
 	README.md = README.md
 	global.json = global.json
 	LICENSE = LICENSE
+	.github\workflows\ci.yml = .github\workflows\ci.yml
 EndProjectSection
 EndProject
 Global
