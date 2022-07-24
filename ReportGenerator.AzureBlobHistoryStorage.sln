@@ -16,6 +16,7 @@ ProjectSection(SolutionItems) = preProject
 	inspectcode.config = inspectcode.config
 	README.md = README.md
 	global.json = global.json
+	LICENSE = LICENSE
 EndProjectSection
 EndProject
 Global
