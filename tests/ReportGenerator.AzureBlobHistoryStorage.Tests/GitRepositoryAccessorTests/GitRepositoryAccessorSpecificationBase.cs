@@ -24,6 +24,7 @@ public class GitRepositoryAccessorSpecificationBase : SpecificationBase
             .WithArguments($"clone https://github.com/lazyboy1/Dummy.git \"{SourceDir.FullName}\"")
             .WithValidation(CommandResultValidation.ZeroExitCode)
             .WithWorkingDirectory(Environment.CurrentDirectory)
+            .WithStandardErrorPipe(PipeTarget.ToDelegate(Console.Write))
             .ExecuteAsync();
     }
 

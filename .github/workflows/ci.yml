@@ -1,0 +1,47 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - v*
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: |
+            3.1.x
+            6.0.x
+
+      - name: Restore dependencies
+        run: dotnet restore --locked-mode
+
+      - name: Build
+        run: dotnet build --no-restore -c Release
+
+      - name: Test
+        run: >
+          dotnet test --no-build -c Release
+          --logger:"junit;LogFilePath=./test-reports/results.{framework}.xml"
+          --collect:"XPlat Code Coverage"
+
+      - name: dotnet publish
+        run: |
+          dotnet publish --no-build -c Release -o publish-3.1 -f netcoreapp3.1 src/ReportGenerator.AzureBlobHistoryStorage/ReportGenerator.AzureBlobHistoryStorage.csproj
+          dotnet publish --no-build -c Release -o publish-6.0 -f net6 src/ReportGenerator.AzureBlobHistoryStorage/ReportGenerator.AzureBlobHistoryStorage.csproj
+  
+  #      upload...
+
+#  release:
+#    name: Release
+#    runs-on: ubuntu-latest
