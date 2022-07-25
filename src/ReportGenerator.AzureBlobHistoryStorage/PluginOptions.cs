@@ -2,9 +2,9 @@
 
 namespace ReportGenerator.AzureBlobHistoryStorage;
 
-public class CommandLineOptions
+public class PluginOptions
 {
-    public CommandLineOptions(IReadOnlyDictionary<string, string> commandLineArguments)
+    public PluginOptions(IReadOnlyDictionary<string, string> commandLineArguments)
     {
         commandLineArguments.TryGetValue("DEBUG", out string? debug);
         Debug = debug?.Equals("true", StringComparison.OrdinalIgnoreCase) == true;

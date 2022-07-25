@@ -15,14 +15,14 @@ public class When_Calling_Constructor_With_Required_Arguments_Missing : Specific
         base.When();
 
         try {
-            _ = new CommandLineOptions(new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase));
+            _ = new PluginOptions(new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase));
         }
         catch (CommandLineArgumentMissingException ex1) {
             _exception1 = ex1;
         }
 
         try {
-            _ = new CommandLineOptions(new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            _ = new PluginOptions(new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
             {
                 { "writesastoken", "value2" },
                 { "repositoryname", "value3" },
@@ -33,7 +33,7 @@ public class When_Calling_Constructor_With_Required_Arguments_Missing : Specific
         }
 
         try {
-            _ = new CommandLineOptions(new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            _ = new PluginOptions(new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
             {
                 { "historycontainerurl", "value1" },
                 { "repositoryname", "value3" },
@@ -44,7 +44,7 @@ public class When_Calling_Constructor_With_Required_Arguments_Missing : Specific
         }
 
         try {
-            _ = new CommandLineOptions(new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+            _ = new PluginOptions(new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
             {
                 { "historycontainerurl", "value1" },
                 { "writesastoken", "value2" },

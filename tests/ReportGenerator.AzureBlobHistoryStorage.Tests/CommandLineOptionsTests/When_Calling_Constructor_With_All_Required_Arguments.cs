@@ -5,7 +5,7 @@ namespace ReportGenerator.AzureBlobHistoryStorage.Tests.CommandLineOptionsTests;
 
 public class When_Calling_Constructor_With_All_Required_Arguments : SpecificationBase
 {
-    private CommandLineOptions _commandLineOptions;
+    private PluginOptions _pluginOptions;
 
     protected override void When()
     {
@@ -18,15 +18,15 @@ public class When_Calling_Constructor_With_All_Required_Arguments : Specificatio
             { "repositoryname", "value3" },
         };
 
-        _commandLineOptions = new CommandLineOptions(arguments);
+        _pluginOptions = new PluginOptions(arguments);
     }
 
     [Then]
     public void It_Should_Create_CommandLineOptions_Instance()
     {
-        _commandLineOptions.Should().NotBeNull();
-        _commandLineOptions.HistoryContainerUrl.Should().Be("value1");
-        _commandLineOptions.WriteSasToken.Should().Be("value2");
-        _commandLineOptions.RepositoryName.Should().Be("value3");
+        _pluginOptions.Should().NotBeNull();
+        _pluginOptions.HistoryContainerUrl.Should().Be("value1");
+        _pluginOptions.WriteSasToken.Should().Be("value2");
+        _pluginOptions.RepositoryName.Should().Be("value3");
     }
 }

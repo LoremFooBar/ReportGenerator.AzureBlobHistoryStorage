@@ -17,7 +17,8 @@ public class AzureBlobHistoryStorage : IHistoryStorage
     public AzureBlobHistoryStorage()
     {
         var commandLineArguments = CommandLineArgumentsParser.GetCommandLineArguments();
-        var options = new CommandLineOptions(commandLineArguments);
+        var optionsFromEnvironment = EnvironmentVariablesOptionsReader.ReadOptionsFromEnvironment();
+        var options = new PluginOptions(optionsFromEnvironment.Any() ? optionsFromEnvironment : commandLineArguments);
 
         _repositoryName = options.RepositoryName;
         _gitRepositoryAccessor = new GitRepositoryAccessor();
