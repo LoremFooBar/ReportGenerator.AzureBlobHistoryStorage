@@ -4,17 +4,17 @@
     <TargetFrameworks>netcoreapp3.1;net6</TargetFrameworks>
     <LangVersion>10</LangVersion>
 
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
 
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0" />
-    <PackageReference Include="CliWrap" Version="3.4.4" />
-    <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" PrivateAssets="All" />
-    <PackageReference Include="ReportGenerator.Core" Version="5.1.9" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.13.0"/>
+    <PackageReference Include="CliWrap" Version="3.4.4"/>
+    <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" PrivateAssets="All"/>
+    <PackageReference Include="ReportGenerator.Core" Version="5.1.9"/>
   </ItemGroup>
 
 </Project>
