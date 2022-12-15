@@ -1,4 +1,3 @@
-﻿using System.Diagnostics.CodeAnalysis;
 using CliWrap;
 using CliWrap.Buffered;
 
@@ -9,10 +8,8 @@ public class GitRepositoryAccessor : IGitRepositoryAccessor
     private readonly string _workingDirectory;
     private string? _repositoryPath;
 
-    [ExcludeFromCodeCoverage]
-    public GitRepositoryAccessor() : this(Environment.CurrentDirectory) { }
-
-    public GitRepositoryAccessor(string workingDirectory) => _workingDirectory = workingDirectory;
+    public GitRepositoryAccessor(string? workingDirectory) => _workingDirectory =
+        string.IsNullOrEmpty(workingDirectory) ? Environment.CurrentDirectory : workingDirectory;
 
     private string RepositoryPath =>
         _repositoryPath ??= Cli.Wrap("git")

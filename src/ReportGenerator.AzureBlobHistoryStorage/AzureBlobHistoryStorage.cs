@@ -1,4 +1,4 @@
-﻿using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.CodeAnalysis;
 using Azure;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
@@ -21,7 +21,7 @@ public class AzureBlobHistoryStorage : IHistoryStorage
         var options = new PluginOptions(optionsFromEnvironment.Any() ? optionsFromEnvironment : commandLineArguments);
 
         _repositoryName = options.RepositoryName;
-        _gitRepositoryAccessor = new GitRepositoryAccessor();
+        _gitRepositoryAccessor = new GitRepositoryAccessor(options.SourceDirectory);
         _httpClient = new HttpClient();
 
         var historyContainerUrl = new Uri(options.HistoryContainerUrl);

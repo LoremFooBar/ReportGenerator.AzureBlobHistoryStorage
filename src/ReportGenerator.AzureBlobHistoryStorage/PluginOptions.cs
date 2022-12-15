@@ -1,4 +1,4 @@
-﻿using JetBrains.Annotations;
+using JetBrains.Annotations;
 
 namespace ReportGenerator.AzureBlobHistoryStorage;
 
@@ -20,6 +20,9 @@ public class PluginOptions
         if (!commandLineArguments.TryGetValue("REPOSITORYNAME", out string? repositoryNameArgument))
             throw new CommandLineArgumentMissingException("-repositoryname");
 
+        if (commandLineArguments.TryGetValue("SOURCEDIRECTORY", out string? sourceDirectory))
+            SourceDirectory = sourceDirectory;
+
         HistoryContainerUrl = historyContainerUrl;
         WriteSasToken = sasTokenArgument;
         RepositoryName = repositoryNameArgument;
@@ -28,6 +31,7 @@ public class PluginOptions
     public string HistoryContainerUrl { get; }
     public string WriteSasToken { get; }
     public string RepositoryName { get; }
+    public string? SourceDirectory { get; set; }
     public bool Debug { get; }
 }
 
