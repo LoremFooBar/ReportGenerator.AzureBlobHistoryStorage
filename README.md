@@ -7,14 +7,14 @@
 
 1. Reference the plugin dll: `-plugins:path/to/ReportGenerator.AzureBlobHistoryStorage.dll`.
    Note: must use absolute path.
-2. Add the following parameters:
+2. Configure using command line parameters to the `reportgenerator` command, or environment variables:
 
-| Name                   | Required? | Description                                                              |
-|------------------------|-----------|--------------------------------------------------------------------------|
-| `-historycontainerurl` | Yes       | URL to the container                                                     |
-| `-writesastoken`       | Yes       | SAS token with right permissions to the container                        |
-| `-repositoryname`      | Yes       | Name of repository                                                       |
-| `-sourcedirectory`     |           | Set the source directory if different from the current working directory |
+| Parameter Name         | Environment Variable | Required? | Description                                                       |
+|------------------------|----------------------|-----------|-------------------------------------------------------------------|
+| `-historycontainerurl` | HISTORYCONTAINERURL  | Yes       | URL to the container                                              |
+| `-writesastoken`       | WRITESASTOKEN        | Yes       | SAS token with write permissions to the container                 |
+| `-repositoryname`      | REPOSITORYNAME       | Yes       | Name of the repository                                            |
+| `-sourcedirectory`     | SOURCEDIRECTORY      |           | Path to source directory, if different from the working directory |
 
 ### Full Example
 
