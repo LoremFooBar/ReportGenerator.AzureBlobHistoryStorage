@@ -31,7 +31,7 @@ public class PluginOptions
     public string HistoryContainerUrl { get; }
     public string WriteSasToken { get; }
     public string RepositoryName { get; }
-    public string? SourceDirectory { get; set; }
+    public string? SourceDirectory { get; }
     public bool Debug { get; }
 }
 
