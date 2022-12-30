@@ -293,8 +293,8 @@
       },
       "ReportGenerator.Core": {
         "type": "Transitive",
-        "resolved": "5.1.9",
-        "contentHash": "B/GhpJVGVkztdLTjlr1Jh7GUEl5LWF05k/EhWM1et/VcTjRdPkT+qR1RHkTBs/8cMGvIYWjOkapzaRmBA6+RBA==",
+        "resolved": "5.1.13",
+        "contentHash": "/Ahu6bXPf1pPL7suu1AZiR2uvDn2ChKg3uMrL+KsYbFj2EjHbuPn18XI4+OihhbZgI03HU6Ug/zRSHao0lcqrQ==",
         "dependencies": {
           "DotNetConfig": "1.0.6",
           "McMaster.NETCore.Plugins": "1.4.0",
@@ -302,18 +302,18 @@
           "Microsoft.Extensions.Configuration.Binder": "5.0.0",
           "Microsoft.Extensions.Configuration.CommandLine": "5.0.0",
           "Microsoft.Extensions.Configuration.Json": "5.0.0",
-          "SixLabors.ImageSharp.Drawing": "1.0.0-beta14"
+          "SixLabors.ImageSharp.Drawing": "1.0.0-beta15"
         }
       },
       "SixLabors.Fonts": {
         "type": "Transitive",
-        "resolved": "1.0.0-beta16",
-        "contentHash": "nv2wE6mjaoLb2t+fpba3tdGftZJgYEC11uRPyGPFL3gt/WDsHfUVRqtDTUThIMo0RTt0iCckHSPp2Oc+WI3iWg=="
+        "resolved": "1.0.0-beta18",
+        "contentHash": "evykNmy/kEE9EAEKgZm3MNUYXuMHFfmcLUNPw7Ho5q7OI96GFkkIxBm+QaKOTPBKw+L0AjKOs+ArVg8P40Ac9g=="
       },
       "SixLabors.ImageSharp": {
         "type": "Transitive",
-        "resolved": "2.0.0",
-        "contentHash": "hZmADrZvn1q9tjPNuuvvl8F8vkz+LFEhnfBkuvwq6Bjgyj3BcOBk6ct4qfssrs25vWIITeH1HkIVdcCYWacpLw==",
+        "resolved": "2.1.3",
+        "contentHash": "8yonNRWX3vUE9k29ta0Hbfa0AEc0hbDjSH/nZ3vOTJEXmY6hLnGsjDKoz96Z+AgOsrdkAu6PdL/Ebaf70aitzw==",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "5.0.0",
           "System.Text.Encoding.CodePages": "5.0.0"
@@ -321,11 +321,11 @@
       },
       "SixLabors.ImageSharp.Drawing": {
         "type": "Transitive",
-        "resolved": "1.0.0-beta14",
-        "contentHash": "2mFbk5s9iu8fWiWyhbMo8VwHst2cw8LACQe36Fn6hlXkUwCEkyGVvdcdtHPQru7ESSnziW47Lt7Jkoay55RBcQ==",
+        "resolved": "1.0.0-beta15",
+        "contentHash": "HMb/JNtNsSOr0lh71s5jD4Bv7sUwTxhGz2fOtuXcInQ4p9SB+1oEY3I6PrKXHpOCKaYArLD5r/4mA8t0dT/M5A==",
         "dependencies": {
-          "SixLabors.Fonts": "1.0.0-beta16",
-          "SixLabors.ImageSharp": "2.0.0"
+          "SixLabors.Fonts": "1.0.0-beta18",
+          "SixLabors.ImageSharp": "2.1.3"
         }
       },
       "System.Buffers": {
@@ -447,7 +447,7 @@
         "dependencies": {
           "Azure.Storage.Blobs": "[12.14.1, )",
           "CliWrap": "[3.4.4, )",
-          "ReportGenerator.Core": "[5.1.9, )"
+          "ReportGenerator.Core": "[5.1.13, )"
         }
       }
     },
@@ -729,8 +729,8 @@
       },
       "ReportGenerator.Core": {
         "type": "Transitive",
-        "resolved": "5.1.9",
-        "contentHash": "B/GhpJVGVkztdLTjlr1Jh7GUEl5LWF05k/EhWM1et/VcTjRdPkT+qR1RHkTBs/8cMGvIYWjOkapzaRmBA6+RBA==",
+        "resolved": "5.1.13",
+        "contentHash": "/Ahu6bXPf1pPL7suu1AZiR2uvDn2ChKg3uMrL+KsYbFj2EjHbuPn18XI4+OihhbZgI03HU6Ug/zRSHao0lcqrQ==",
         "dependencies": {
           "DotNetConfig": "1.0.6",
           "McMaster.NETCore.Plugins": "1.4.0",
@@ -738,18 +738,18 @@
           "Microsoft.Extensions.Configuration.Binder": "5.0.0",
           "Microsoft.Extensions.Configuration.CommandLine": "5.0.0",
           "Microsoft.Extensions.Configuration.Json": "5.0.0",
-          "SixLabors.ImageSharp.Drawing": "1.0.0-beta14"
+          "SixLabors.ImageSharp.Drawing": "1.0.0-beta15"
         }
       },
       "SixLabors.Fonts": {
         "type": "Transitive",
-        "resolved": "1.0.0-beta16",
-        "contentHash": "nv2wE6mjaoLb2t+fpba3tdGftZJgYEC11uRPyGPFL3gt/WDsHfUVRqtDTUThIMo0RTt0iCckHSPp2Oc+WI3iWg=="
+        "resolved": "1.0.0-beta18",
+        "contentHash": "evykNmy/kEE9EAEKgZm3MNUYXuMHFfmcLUNPw7Ho5q7OI96GFkkIxBm+QaKOTPBKw+L0AjKOs+ArVg8P40Ac9g=="
       },
       "SixLabors.ImageSharp": {
         "type": "Transitive",
-        "resolved": "2.0.0",
-        "contentHash": "hZmADrZvn1q9tjPNuuvvl8F8vkz+LFEhnfBkuvwq6Bjgyj3BcOBk6ct4qfssrs25vWIITeH1HkIVdcCYWacpLw==",
+        "resolved": "2.1.3",
+        "contentHash": "8yonNRWX3vUE9k29ta0Hbfa0AEc0hbDjSH/nZ3vOTJEXmY6hLnGsjDKoz96Z+AgOsrdkAu6PdL/Ebaf70aitzw==",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "5.0.0",
           "System.Text.Encoding.CodePages": "5.0.0"
@@ -757,11 +757,11 @@
       },
       "SixLabors.ImageSharp.Drawing": {
         "type": "Transitive",
-        "resolved": "1.0.0-beta14",
-        "contentHash": "2mFbk5s9iu8fWiWyhbMo8VwHst2cw8LACQe36Fn6hlXkUwCEkyGVvdcdtHPQru7ESSnziW47Lt7Jkoay55RBcQ==",
+        "resolved": "1.0.0-beta15",
+        "contentHash": "HMb/JNtNsSOr0lh71s5jD4Bv7sUwTxhGz2fOtuXcInQ4p9SB+1oEY3I6PrKXHpOCKaYArLD5r/4mA8t0dT/M5A==",
         "dependencies": {
-          "SixLabors.Fonts": "1.0.0-beta16",
-          "SixLabors.ImageSharp": "2.0.0"
+          "SixLabors.Fonts": "1.0.0-beta18",
+          "SixLabors.ImageSharp": "2.1.3"
         }
       },
       "System.Collections.Immutable": {
@@ -849,7 +849,7 @@
         "dependencies": {
           "Azure.Storage.Blobs": "[12.14.1, )",
           "CliWrap": "[3.4.4, )",
-          "ReportGenerator.Core": "[5.1.9, )"
+          "ReportGenerator.Core": "[5.1.13, )"
         }
       }
     },
@@ -1131,8 +1131,8 @@
       },
       "ReportGenerator.Core": {
         "type": "Transitive",
-        "resolved": "5.1.9",
-        "contentHash": "B/GhpJVGVkztdLTjlr1Jh7GUEl5LWF05k/EhWM1et/VcTjRdPkT+qR1RHkTBs/8cMGvIYWjOkapzaRmBA6+RBA==",
+        "resolved": "5.1.13",
+        "contentHash": "/Ahu6bXPf1pPL7suu1AZiR2uvDn2ChKg3uMrL+KsYbFj2EjHbuPn18XI4+OihhbZgI03HU6Ug/zRSHao0lcqrQ==",
         "dependencies": {
           "DotNetConfig": "1.0.6",
           "McMaster.NETCore.Plugins": "1.4.0",
@@ -1140,18 +1140,18 @@
           "Microsoft.Extensions.Configuration.Binder": "5.0.0",
           "Microsoft.Extensions.Configuration.CommandLine": "5.0.0",
           "Microsoft.Extensions.Configuration.Json": "5.0.0",
-          "SixLabors.ImageSharp.Drawing": "1.0.0-beta14"
+          "SixLabors.ImageSharp.Drawing": "1.0.0-beta15"
         }
       },
       "SixLabors.Fonts": {
         "type": "Transitive",
-        "resolved": "1.0.0-beta16",
-        "contentHash": "nv2wE6mjaoLb2t+fpba3tdGftZJgYEC11uRPyGPFL3gt/WDsHfUVRqtDTUThIMo0RTt0iCckHSPp2Oc+WI3iWg=="
+        "resolved": "1.0.0-beta18",
+        "contentHash": "evykNmy/kEE9EAEKgZm3MNUYXuMHFfmcLUNPw7Ho5q7OI96GFkkIxBm+QaKOTPBKw+L0AjKOs+ArVg8P40Ac9g=="
       },
       "SixLabors.ImageSharp": {
         "type": "Transitive",
-        "resolved": "2.0.0",
-        "contentHash": "hZmADrZvn1q9tjPNuuvvl8F8vkz+LFEhnfBkuvwq6Bjgyj3BcOBk6ct4qfssrs25vWIITeH1HkIVdcCYWacpLw==",
+        "resolved": "2.1.3",
+        "contentHash": "8yonNRWX3vUE9k29ta0Hbfa0AEc0hbDjSH/nZ3vOTJEXmY6hLnGsjDKoz96Z+AgOsrdkAu6PdL/Ebaf70aitzw==",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "5.0.0",
           "System.Text.Encoding.CodePages": "5.0.0"
@@ -1159,11 +1159,11 @@
       },
       "SixLabors.ImageSharp.Drawing": {
         "type": "Transitive",
-        "resolved": "1.0.0-beta14",
-        "contentHash": "2mFbk5s9iu8fWiWyhbMo8VwHst2cw8LACQe36Fn6hlXkUwCEkyGVvdcdtHPQru7ESSnziW47Lt7Jkoay55RBcQ==",
+        "resolved": "1.0.0-beta15",
+        "contentHash": "HMb/JNtNsSOr0lh71s5jD4Bv7sUwTxhGz2fOtuXcInQ4p9SB+1oEY3I6PrKXHpOCKaYArLD5r/4mA8t0dT/M5A==",
         "dependencies": {
-          "SixLabors.Fonts": "1.0.0-beta16",
-          "SixLabors.ImageSharp": "2.0.0"
+          "SixLabors.Fonts": "1.0.0-beta18",
+          "SixLabors.ImageSharp": "2.1.3"
         }
       },
       "System.Collections.Immutable": {
@@ -1251,7 +1251,7 @@
         "dependencies": {
           "Azure.Storage.Blobs": "[12.14.1, )",
           "CliWrap": "[3.4.4, )",
-          "ReportGenerator.Core": "[5.1.9, )"
+          "ReportGenerator.Core": "[5.1.13, )"
         }
       }
     }
