@@ -15,7 +15,6 @@ ProjectSection(SolutionItems) = preProject
 	Directory.Build.props = Directory.Build.props
 	inspectcode.config = inspectcode.config
 	README.md = README.md
-	global.json = global.json
 	LICENSE = LICENSE
 	.github\workflows\ci.yml = .github\workflows\ci.yml
 EndProjectSection
