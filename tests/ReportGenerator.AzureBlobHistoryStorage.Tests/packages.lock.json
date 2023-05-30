@@ -59,9 +59,9 @@
       },
       "NUnit3TestAdapter": {
         "type": "Direct",
-        "requested": "[4.3.1, )",
-        "resolved": "4.3.1",
-        "contentHash": "R+bGFtsUpLWywjT1nb3xMmoVa2AIw6ClIGC+XjW9lYE8hwJeos+NdR/mtg4RXbBphmC9epALrnUc6MM7mUG8+Q=="
+        "requested": "[4.5.0, )",
+        "resolved": "4.5.0",
+        "contentHash": "s8JpqTe9bI2f49Pfr3dFRfoVSuFQyraTj68c3XXjIS/MRGvvkLnrg6RLqnTjdShX+AdFUCCU/4Xex58AdUfs6A=="
       },
       "RichardSzalay.MockHttp": {
         "type": "Direct",
@@ -527,9 +527,9 @@
       },
       "NUnit3TestAdapter": {
         "type": "Direct",
-        "requested": "[4.3.1, )",
-        "resolved": "4.3.1",
-        "contentHash": "R+bGFtsUpLWywjT1nb3xMmoVa2AIw6ClIGC+XjW9lYE8hwJeos+NdR/mtg4RXbBphmC9epALrnUc6MM7mUG8+Q=="
+        "requested": "[4.5.0, )",
+        "resolved": "4.5.0",
+        "contentHash": "s8JpqTe9bI2f49Pfr3dFRfoVSuFQyraTj68c3XXjIS/MRGvvkLnrg6RLqnTjdShX+AdFUCCU/4Xex58AdUfs6A=="
       },
       "RichardSzalay.MockHttp": {
         "type": "Direct",
@@ -940,9 +940,9 @@
       },
       "NUnit3TestAdapter": {
         "type": "Direct",
-        "requested": "[4.3.1, )",
-        "resolved": "4.3.1",
-        "contentHash": "R+bGFtsUpLWywjT1nb3xMmoVa2AIw6ClIGC+XjW9lYE8hwJeos+NdR/mtg4RXbBphmC9epALrnUc6MM7mUG8+Q=="
+        "requested": "[4.5.0, )",
+        "resolved": "4.5.0",
+        "contentHash": "s8JpqTe9bI2f49Pfr3dFRfoVSuFQyraTj68c3XXjIS/MRGvvkLnrg6RLqnTjdShX+AdFUCCU/4Xex58AdUfs6A=="
       },
       "RichardSzalay.MockHttp": {
         "type": "Direct",
