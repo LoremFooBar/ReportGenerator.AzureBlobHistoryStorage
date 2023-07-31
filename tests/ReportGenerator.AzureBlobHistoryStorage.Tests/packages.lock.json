@@ -111,8 +111,8 @@
       },
       "CliWrap": {
         "type": "Transitive",
-        "resolved": "3.6.0",
-        "contentHash": "AY6LvRZOEYuAiuaWPLnIDddJUnpiPpiSvfoPwweEXI1orRNnsAwf6sOv9Tt0J4GFrlwejFF/INuR57iEKIh7bw=="
+        "resolved": "3.6.4",
+        "contentHash": "KVGVZlR0GWgN3Xr88oZMSzYu38TXIogwLz588e6wku3mIfg6lPchxpYWtZSZfurpTY63ANF61xWp8EZF3jkN4g=="
       },
       "DotNetConfig": {
         "type": "Transitive",
@@ -464,7 +464,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Storage.Blobs": "[12.17.0, )",
-          "CliWrap": "[3.6.0, )",
+          "CliWrap": "[3.6.4, )",
           "ReportGenerator.Core": "[5.1.23, )"
         }
       }
@@ -579,8 +579,8 @@
       },
       "CliWrap": {
         "type": "Transitive",
-        "resolved": "3.6.0",
-        "contentHash": "AY6LvRZOEYuAiuaWPLnIDddJUnpiPpiSvfoPwweEXI1orRNnsAwf6sOv9Tt0J4GFrlwejFF/INuR57iEKIh7bw=="
+        "resolved": "3.6.4",
+        "contentHash": "KVGVZlR0GWgN3Xr88oZMSzYu38TXIogwLz588e6wku3mIfg6lPchxpYWtZSZfurpTY63ANF61xWp8EZF3jkN4g=="
       },
       "DotNetConfig": {
         "type": "Transitive",
@@ -877,7 +877,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Storage.Blobs": "[12.17.0, )",
-          "CliWrap": "[3.6.0, )",
+          "CliWrap": "[3.6.4, )",
           "ReportGenerator.Core": "[5.1.23, )"
         }
       }
@@ -992,8 +992,8 @@
       },
       "CliWrap": {
         "type": "Transitive",
-        "resolved": "3.6.0",
-        "contentHash": "AY6LvRZOEYuAiuaWPLnIDddJUnpiPpiSvfoPwweEXI1orRNnsAwf6sOv9Tt0J4GFrlwejFF/INuR57iEKIh7bw=="
+        "resolved": "3.6.4",
+        "contentHash": "KVGVZlR0GWgN3Xr88oZMSzYu38TXIogwLz588e6wku3mIfg6lPchxpYWtZSZfurpTY63ANF61xWp8EZF3jkN4g=="
       },
       "DotNetConfig": {
         "type": "Transitive",
@@ -1283,7 +1283,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Storage.Blobs": "[12.17.0, )",
-          "CliWrap": "[3.6.0, )",
+          "CliWrap": "[3.6.4, )",
           "ReportGenerator.Core": "[5.1.23, )"
         }
       }
