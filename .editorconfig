@@ -3333,7 +3333,7 @@ resharper_xaml_xaml_xamarin_forms_data_type_and_binding_context_type_mismatched_
 resharper_xaml_x_key_attribute_disallowed_highlighting = error
 resharper_xunit_xunit_test_with_console_output_highlighting = warning
 
-[*.{json, xml, config, md, csproj, yaml, yml, Build.props}]
+[*.{json,xml,config,md,csproj,yaml,yml,Build.props}]
 indent_size = 2
 tab_width = 2
 #space_before_self_closing = false
