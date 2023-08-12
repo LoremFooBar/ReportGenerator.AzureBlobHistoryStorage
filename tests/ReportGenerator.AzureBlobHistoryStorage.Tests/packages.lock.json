@@ -297,8 +297,8 @@
       },
       "ReportGenerator.Core": {
         "type": "Transitive",
-        "resolved": "5.1.23",
-        "contentHash": "la6+v/lA1h+4oEbJemad7N9jXMWI0jfHCzKs2SXx4m0q4auaImh92mHmzAUYTxCxzPvLFEExwwhrMK50RByTvw==",
+        "resolved": "5.1.24",
+        "contentHash": "kofu32ZWhB2tHcJfWLKRUCxdsgi4AhEBS6xTSenBlaGmTyIAoLazQNWKLv1dm+560LV32XaZKPAhy0wapQRq3w==",
         "dependencies": {
           "DotNetConfig": "1.0.6",
           "McMaster.NETCore.Plugins": "1.4.0",
@@ -465,7 +465,7 @@
         "dependencies": {
           "Azure.Storage.Blobs": "[12.17.0, )",
           "CliWrap": "[3.6.4, )",
-          "ReportGenerator.Core": "[5.1.23, )"
+          "ReportGenerator.Core": "[5.1.24, )"
         }
       }
     },
@@ -751,8 +751,8 @@
       },
       "ReportGenerator.Core": {
         "type": "Transitive",
-        "resolved": "5.1.23",
-        "contentHash": "la6+v/lA1h+4oEbJemad7N9jXMWI0jfHCzKs2SXx4m0q4auaImh92mHmzAUYTxCxzPvLFEExwwhrMK50RByTvw==",
+        "resolved": "5.1.24",
+        "contentHash": "kofu32ZWhB2tHcJfWLKRUCxdsgi4AhEBS6xTSenBlaGmTyIAoLazQNWKLv1dm+560LV32XaZKPAhy0wapQRq3w==",
         "dependencies": {
           "DotNetConfig": "1.0.6",
           "McMaster.NETCore.Plugins": "1.4.0",
@@ -878,7 +878,7 @@
         "dependencies": {
           "Azure.Storage.Blobs": "[12.17.0, )",
           "CliWrap": "[3.6.4, )",
-          "ReportGenerator.Core": "[5.1.23, )"
+          "ReportGenerator.Core": "[5.1.24, )"
         }
       }
     },
@@ -1161,8 +1161,8 @@
       },
       "ReportGenerator.Core": {
         "type": "Transitive",
-        "resolved": "5.1.23",
-        "contentHash": "la6+v/lA1h+4oEbJemad7N9jXMWI0jfHCzKs2SXx4m0q4auaImh92mHmzAUYTxCxzPvLFEExwwhrMK50RByTvw==",
+        "resolved": "5.1.24",
+        "contentHash": "kofu32ZWhB2tHcJfWLKRUCxdsgi4AhEBS6xTSenBlaGmTyIAoLazQNWKLv1dm+560LV32XaZKPAhy0wapQRq3w==",
         "dependencies": {
           "DotNetConfig": "1.0.6",
           "McMaster.NETCore.Plugins": "1.4.0",
@@ -1284,7 +1284,7 @@
         "dependencies": {
           "Azure.Storage.Blobs": "[12.17.0, )",
           "CliWrap": "[3.6.4, )",
-          "ReportGenerator.Core": "[5.1.23, )"
+          "ReportGenerator.Core": "[5.1.24, )"
         }
       }
     }
