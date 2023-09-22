@@ -10,13 +10,6 @@
         "tests/**"
       ],
       "extends": ":semanticCommitTypeAll(test)"
-    },
-    {
-      "matchPaths": [
-        ".github/workflows/**",
-        "bitbucket-pipelines.yml"
-      ],
-      "extends": ":semanticCommitTypeAll(ci)"
     }
   ]
 }
