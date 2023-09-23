@@ -37,12 +37,14 @@ jobs:
           --collect:"XPlat Code Coverage"
 
       - name: dotnet publish
+        if: ${{ github.ref_type == 'tag' }}
         run: |
           dotnet publish --no-build -c Release -o publish-3.1 -f netcoreapp3.1 src/ReportGenerator.AzureBlobHistoryStorage/ReportGenerator.AzureBlobHistoryStorage.csproj
           dotnet publish --no-build -c Release -o publish-6.0 -f net6.0 src/ReportGenerator.AzureBlobHistoryStorage/ReportGenerator.AzureBlobHistoryStorage.csproj
           dotnet publish --no-build -c Release -o publish-7.0 -f net7.0 src/ReportGenerator.AzureBlobHistoryStorage/ReportGenerator.AzureBlobHistoryStorage.csproj
 
       - name: Upload artifact for deployment job
+        if: ${{ github.ref_type == 'tag' }}
         uses: actions/upload-artifact@v3
         with:
           name: dll
