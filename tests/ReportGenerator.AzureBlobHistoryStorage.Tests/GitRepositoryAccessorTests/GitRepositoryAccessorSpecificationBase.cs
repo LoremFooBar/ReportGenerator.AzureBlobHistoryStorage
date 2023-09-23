@@ -6,41 +6,40 @@ namespace ReportGenerator.AzureBlobHistoryStorage.Tests.GitRepositoryAccessorTes
 public class GitRepositoryAccessorSpecificationBase : SpecificationBase
 {
     protected GitRepositoryAccessor GitRepositoryAccessor { get; private set; }
-    private DirectoryInfo SourceDir { get; set; }
+    protected DirectoryInfo WorkingDir { get; set; }
+    protected DirectoryInfo SourceDir { get; set; }
 
     protected override async Task BeforeAllTestsAsync()
     {
         await base.BeforeAllTestsAsync();
 
-        var currentDir = new DirectoryInfo(Environment.CurrentDirectory);
-        SourceDir = new DirectoryInfo(Path.Combine(currentDir.FullName, "dummy"));
-
-        if (SourceDir.Exists) {
-            DeleteSourceDirectory();
-            SourceDir.Create();
-        }
+        WorkingDir = new DirectoryInfo(Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N")));
+        WorkingDir.Create();
+        SourceDir = new DirectoryInfo(Path.Combine(WorkingDir.FullName, "dummy"));
 
         await Cli.Wrap("git")
             .WithArguments($"clone https://github.com/lazyboy1/Dummy.git \"{SourceDir.FullName}\"")
             .WithValidation(CommandResultValidation.ZeroExitCode)
-            .WithWorkingDirectory(Environment.CurrentDirectory)
+            .WithWorkingDirectory(WorkingDir.FullName)
             .WithStandardErrorPipe(PipeTarget.ToDelegate(Console.Write))
             .ExecuteAsync();
     }
 
-    protected override void AfterAllTests()
+    protected override Task CleanUpAsync()
     {
-        base.AfterAllTests();
+        base.CleanUp();
 
-        DeleteSourceDirectory();
+        DeleteCreatedDirectories();
+
+        return Task.CompletedTask;
     }
 
-    private void DeleteSourceDirectory()
+    private void DeleteCreatedDirectories()
     {
-        if (!SourceDir.Exists) return;
+        if (!WorkingDir.Exists) return;
 
-        SetAttributesNormal(SourceDir);
-        SourceDir.Delete(true);
+        SetAttributesNormal(WorkingDir);
+        WorkingDir.Delete(true);
     }
 
     private static void SetAttributesNormal(DirectoryInfo path)
@@ -60,10 +59,12 @@ public class GitRepositoryAccessorSpecificationBase : SpecificationBase
         }
     }
 
-    protected override void Given()
+    protected override Task GivenAsync()
     {
-        base.Given();
+        base.GivenAsync();
 
         GitRepositoryAccessor = new GitRepositoryAccessor(SourceDir.FullName);
+
+        return Task.CompletedTask;
     }
 }

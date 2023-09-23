@@ -43,6 +43,8 @@ public class AzureBlobHistoryStorage : IHistoryStorage
 
     public IEnumerable<string> GetHistoryFilePaths()
     {
+        _gitRepositoryAccessor.VerifyDirectoryIsSafeAsync();
+
         var commitIds = _gitRepositoryAccessor.GetCommitIdsAsync(50).GetAwaiter().GetResult();
 
         foreach (string commitId in commitIds) {
@@ -74,6 +76,8 @@ public class AzureBlobHistoryStorage : IHistoryStorage
 
     public void SaveFile(Stream stream, string fileName)
     {
+        _gitRepositoryAccessor.VerifyDirectoryIsSafeAsync();
+
         string headCommitId = _gitRepositoryAccessor.GetHeadCommitIdAsync().GetAwaiter().GetResult();
         string blobName = $"{_repositoryName}/{headCommitId}/{fileName}";
 
