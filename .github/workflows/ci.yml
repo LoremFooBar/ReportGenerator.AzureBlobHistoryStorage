@@ -24,10 +24,21 @@ jobs:
             7.0.x
 
       - name: Restore dependencies
-        run: dotnet restore --locked-mode
+        run: |
+          dotnet restore --locked-mode
+          dotnet tool restore
 
       - name: Build
         run: dotnet build --no-restore -c Release
+
+      - name: Inspect code
+        run: dotnet jb inspectcode --config=inspectcode.config
+
+      - name: Upload SARIF
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: inspect.sarif
+          category: resharper-inspectcode
 
       - name: Test
         run: >
