@@ -7,9 +7,9 @@ public class PluginOptions
     public PluginOptions(IReadOnlyDictionary<string, string> commandLineArguments)
     {
         commandLineArguments.TryGetValue("DEBUG", out string? debug);
-        Debug = debug?.Equals("true", StringComparison.OrdinalIgnoreCase) == true;
+        bool isDebug = debug?.Equals("true", StringComparison.OrdinalIgnoreCase) == true;
 
-        Console.WriteLine(Debug ? $"command line arguments: {string.Join(" | ", commandLineArguments)}" : "NO DEBUG");
+        Console.WriteLine(isDebug ? $"command line arguments: {string.Join(" | ", commandLineArguments)}" : "NO DEBUG");
 
         if (!commandLineArguments.TryGetValue("HISTORYCONTAINERURL", out string? historyContainerUrl))
             throw new CommandLineArgumentMissingException("-historycontainerurl");
@@ -32,7 +32,6 @@ public class PluginOptions
     public string WriteSasToken { get; }
     public string RepositoryName { get; }
     public string? SourceDirectory { get; }
-    public bool Debug { get; }
 }
 
 [PublicAPI]
