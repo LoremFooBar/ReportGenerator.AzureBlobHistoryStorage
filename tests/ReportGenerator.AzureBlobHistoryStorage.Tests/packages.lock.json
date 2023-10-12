@@ -65,9 +65,9 @@
       },
       "RichardSzalay.MockHttp": {
         "type": "Direct",
-        "requested": "[6.0.0, )",
-        "resolved": "6.0.0",
-        "contentHash": "bStGNqIX/MGYtML7K3EzdsE/k5HGVAcg7XgN23TQXGXqxNC9fvYFR94fA0sGM5hAT36R+BBGet6ZDQxXL/IPxg=="
+        "requested": "[7.0.0, )",
+        "resolved": "7.0.0",
+        "contentHash": "QwnauYiaywp65QKFnP+wvgiQ2D8Pv888qB2dyfd7MSVDF06sIvxqASenk+RxsWybyyt+Hu1Y251wQxpHTv3UYg=="
       },
       "Azure.Core": {
         "type": "Transitive",
@@ -481,9 +481,9 @@
       },
       "RichardSzalay.MockHttp": {
         "type": "Direct",
-        "requested": "[6.0.0, )",
-        "resolved": "6.0.0",
-        "contentHash": "bStGNqIX/MGYtML7K3EzdsE/k5HGVAcg7XgN23TQXGXqxNC9fvYFR94fA0sGM5hAT36R+BBGet6ZDQxXL/IPxg=="
+        "requested": "[7.0.0, )",
+        "resolved": "7.0.0",
+        "contentHash": "QwnauYiaywp65QKFnP+wvgiQ2D8Pv888qB2dyfd7MSVDF06sIvxqASenk+RxsWybyyt+Hu1Y251wQxpHTv3UYg=="
       },
       "Azure.Core": {
         "type": "Transitive",
