@@ -35,7 +35,7 @@ jobs:
         run: dotnet jb inspectcode --config=inspectcode.config
 
       - name: Upload SARIF
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: inspect.sarif
           category: resharper-inspectcode
