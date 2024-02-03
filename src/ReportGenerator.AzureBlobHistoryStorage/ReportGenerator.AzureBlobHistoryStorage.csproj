@@ -14,7 +14,7 @@
     <PackageReference Include="Azure.Storage.Blobs" Version="12.18.0"/>
     <PackageReference Include="CliWrap" Version="3.6.4"/>
     <PackageReference Include="JetBrains.Annotations" Version="2023.2.0" PrivateAssets="All"/>
-    <PackageReference Include="ReportGenerator.Core" Version="5.1.26"/>
+    <PackageReference Include="ReportGenerator.Core" Version="5.2.1"/>
   </ItemGroup>
 
 </Project>
