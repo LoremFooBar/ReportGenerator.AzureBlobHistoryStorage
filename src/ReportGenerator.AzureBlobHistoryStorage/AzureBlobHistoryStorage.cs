@@ -9,6 +9,7 @@ namespace ReportGenerator.AzureBlobHistoryStorage;
 public class AzureBlobHistoryStorage : IHistoryStorage
 {
     private readonly BlobContainerClient _blobContainerClient;
+    private readonly string[]? _commitIds;
     private readonly IGitRepositoryAccessor _gitRepositoryAccessor;
     private readonly HttpClient _httpClient;
     private readonly string _repositoryName;
@@ -27,25 +28,27 @@ public class AzureBlobHistoryStorage : IHistoryStorage
         var historyContainerUrl = new Uri(options.HistoryContainerUrl);
         var blobContainerUri = new UriBuilder(historyContainerUrl) { Query = options.WriteSasToken }.Uri;
         _blobContainerClient = new BlobContainerClient(blobContainerUri);
+
+        _commitIds = options.CommitIds;
     }
 
     /// <summary>
     /// Initialize new instance of <see cref="AzureBlobHistoryStorage" /> for tests only
     /// </summary>
     public AzureBlobHistoryStorage(IGitRepositoryAccessor gitRepositoryAccessor,
-        BlobContainerClient blobContainerClient, HttpClient httpClient, string repositoryName)
+        BlobContainerClient blobContainerClient, HttpClient httpClient, string repositoryName,
+        string[]? commitIds = null)
     {
         _gitRepositoryAccessor = gitRepositoryAccessor;
         _blobContainerClient = blobContainerClient;
         _httpClient = httpClient;
         _repositoryName = repositoryName;
+        _commitIds = commitIds;
     }
 
     public IEnumerable<string> GetHistoryFilePaths()
     {
-        _gitRepositoryAccessor.VerifyDirectoryIsSafeAsync();
-
-        var commitIds = _gitRepositoryAccessor.GetCommitIdsAsync(50).GetAwaiter().GetResult();
+        var commitIds = _commitIds ?? _gitRepositoryAccessor.GetCommitIdsAsync(50).GetAwaiter().GetResult();
 
         foreach (string commitId in commitIds) {
             Pageable<BlobItem> blobs;
@@ -76,9 +79,8 @@ public class AzureBlobHistoryStorage : IHistoryStorage
 
     public void SaveFile(Stream stream, string fileName)
     {
-        _gitRepositoryAccessor.VerifyDirectoryIsSafeAsync();
-
-        string headCommitId = _gitRepositoryAccessor.GetHeadCommitIdAsync().GetAwaiter().GetResult();
+        string headCommitId = _commitIds?.FirstOrDefault() ??
+                              _gitRepositoryAccessor.GetHeadCommitIdAsync().GetAwaiter().GetResult();
         string blobName = $"{_repositoryName}/{headCommitId}/{fileName}";
 
         try {

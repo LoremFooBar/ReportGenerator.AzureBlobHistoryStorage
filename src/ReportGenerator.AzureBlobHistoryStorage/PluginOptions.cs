@@ -23,6 +23,11 @@ public class PluginOptions
         if (commandLineArguments.TryGetValue("SOURCEDIRECTORY", out string? sourceDirectory))
             SourceDirectory = sourceDirectory;
 
+        if (commandLineArguments.TryGetValue("COMMITIDS", out string? commitIds)) {
+            CommitIds = commitIds.Split(new[] { ',', '\n', ' ' },
+                StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+        }
+
         HistoryContainerUrl = historyContainerUrl;
         WriteSasToken = sasTokenArgument;
         RepositoryName = repositoryNameArgument;
@@ -32,6 +37,7 @@ public class PluginOptions
     public string WriteSasToken { get; }
     public string RepositoryName { get; }
     public string? SourceDirectory { get; }
+    public string[]? CommitIds { get; }
 }
 
 [PublicAPI]

@@ -16,7 +16,11 @@ public class HistoryStorageSpecificationBase : SpecificationBase
 
     protected Mock<BlobContainerClient> BlobContainerClientMock;
 
+    protected IGitRepositoryAccessor GitRepositoryAccessor;
+
     protected AzureBlobHistoryStorage HistoryStorage;
+
+    protected bool ProvideCommitIds { get; set; }
 
     protected static List<string> FakeCommitIds { get; } = new()
     {
@@ -30,13 +34,13 @@ public class HistoryStorageSpecificationBase : SpecificationBase
     {
         base.Given();
 
-        var gitRepositoryAccessor = SetupGitRepositoryAccessor();
+        GitRepositoryAccessor = SetupGitRepositoryAccessor();
         BlobContainerClientMock = SetupBlobContainerClientMock();
         var httpClient = SetupHttpClient();
 
         HistoryStorage =
-            new AzureBlobHistoryStorage(gitRepositoryAccessor, BlobContainerClientMock.Object, httpClient,
-                RepositoryName);
+            new AzureBlobHistoryStorage(GitRepositoryAccessor, BlobContainerClientMock.Object, httpClient,
+                RepositoryName, ProvideCommitIds ? FakeCommitIds.ToArray() : null);
     }
 
     private HttpClient SetupHttpClient()

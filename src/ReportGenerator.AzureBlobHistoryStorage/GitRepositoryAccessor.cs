@@ -14,6 +14,8 @@ public class GitRepositoryAccessor : IGitRepositoryAccessor
 
     public async Task<IEnumerable<string>> GetCommitIdsAsync(int numOfCommits)
     {
+        await VerifyDirectoryIsSafeAsync().ConfigureAwait(false);
+
         var cancellationToken = new CancellationTokenSource(TimeSpan.FromMinutes(1)).Token;
 
         var bufferedCommandResult = await Cli.Wrap("git")
@@ -27,6 +29,8 @@ public class GitRepositoryAccessor : IGitRepositoryAccessor
 
     public async Task<string> GetHeadCommitIdAsync()
     {
+        await VerifyDirectoryIsSafeAsync().ConfigureAwait(false);
+
         var cancellationToken = new CancellationTokenSource(TimeSpan.FromSeconds(5)).Token;
         var bufferedCommandResult = await Cli.Wrap("git")
             .WithArguments("rev-parse HEAD")

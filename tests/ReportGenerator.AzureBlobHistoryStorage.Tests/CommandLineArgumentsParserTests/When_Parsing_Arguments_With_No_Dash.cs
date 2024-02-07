@@ -15,7 +15,7 @@ public class When_Parsing_Arguments_With_No_Dash : SpecificationBase
     }
 
     [Then]
-    public void It_Should_Return_Dictionary_With_All_Arguments_Names_And_Values()
+    public void It_Should_Return_Empty_Dictionary()
     {
         _parsedArguments.Should().BeEmpty();
     }
