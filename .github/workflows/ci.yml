@@ -75,8 +75,8 @@ jobs:
       - run: cd publish-6.0 && zip -r ../net6.0.zip ** && cd -
       - run: cd publish-7.0 && zip -r ../net7.0.zip ** && cd -
 
-      - uses: marvinpinto/action-automatic-releases@latest
+      - uses: LoremFooBar/action-automatic-releases@master
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          prerelease: false
+          prerelease: ${{ contains(github.ref_name, '-') }}
           files: net*.zip
