@@ -352,6 +352,8 @@ dotnet_style_qualification_for_field = false:error
 dotnet_style_qualification_for_method = false:error
 dotnet_style_qualification_for_property = false:error
 dotnet_style_require_accessibility_modifiers = for_non_interface_members:error
+dotnet_style_collection_initializer = true:error
+dotnet_style_prefer_collection_expression = true:error
 
 # ReSharper properties
 resharper_accessor_owner_body = expression_body
@@ -839,6 +841,7 @@ resharper_toplevel_function_declaration_return_type_style = do_not_change
 resharper_toplevel_function_definition_return_type_style = do_not_change
 resharper_trailing_comma_in_multiline_lists = true
 resharper_trailing_comma_in_singleline_lists = false
+resharper_use_collection_expression_highlighting = error
 resharper_use_continuous_indent_inside_initializer_braces = true
 resharper_use_continuous_indent_inside_parens = true
 resharper_use_continuous_line_indent_in_expression_braces = false
@@ -2932,6 +2935,7 @@ resharper_redundant_to_string_call_for_value_type_highlighting = error
 resharper_redundant_to_string_call_highlighting = error
 resharper_redundant_type_arguments_of_method_highlighting = error
 resharper_redundant_type_check_in_pattern_highlighting = warning
+resharper_redundant_type_declaration_body_highlighting = error
 resharper_redundant_unsafe_context_highlighting = error
 resharper_redundant_using_directive_global_highlighting = error
 resharper_redundant_using_directive_highlighting = error

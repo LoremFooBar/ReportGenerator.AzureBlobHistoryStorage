@@ -1,4 +1,5 @@
-﻿using Azure;
+﻿using System.Diagnostics.CodeAnalysis;
+using Azure;
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using Moq;
@@ -22,11 +23,11 @@ public class HistoryStorageSpecificationBase : SpecificationBase
 
     protected bool ProvideCommitIds { get; set; }
 
-    protected static List<string> FakeCommitIds { get; } = new()
-    {
+    protected static List<string> FakeCommitIds { get; } =
+    [
         "24e014a19f8af59ddf7b0adb3d12dbacbcb37465", "12b8122e490b0ebed975ca0f2eaead37b16a9705",
         "1b6cfaed161d810ab647c0a4f737dfd2c15d286e",
-    };
+    ];
 
     protected static string FakeHeadCommitId { get; } = FakeCommitIds.First();
 
@@ -55,6 +56,7 @@ public class HistoryStorageSpecificationBase : SpecificationBase
         return httpClient;
     }
 
+    [SuppressMessage("ReSharper", "NotDisposedResource")]
     private Mock<BlobContainerClient> SetupBlobContainerClientMock()
     {
         var blobContainerClientMock = new Mock<BlobContainerClient>();
