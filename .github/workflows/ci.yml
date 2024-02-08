@@ -21,7 +21,7 @@ jobs:
         with:
           dotnet-version: |
             6.0.x
-            7.0.x
+            8.0.x
 
       - name: Restore dependencies
         run: |
@@ -50,7 +50,7 @@ jobs:
         if: ${{ github.ref_type == 'tag' }}
         run: |
           dotnet publish --no-build -c Release -o publish-6.0 -f net6.0 src/ReportGenerator.AzureBlobHistoryStorage/ReportGenerator.AzureBlobHistoryStorage.csproj
-          dotnet publish --no-build -c Release -o publish-7.0 -f net7.0 src/ReportGenerator.AzureBlobHistoryStorage/ReportGenerator.AzureBlobHistoryStorage.csproj
+          dotnet publish --no-build -c Release -o publish-8.0 -f net8.0 src/ReportGenerator.AzureBlobHistoryStorage/ReportGenerator.AzureBlobHistoryStorage.csproj
 
       - name: Upload artifact for deployment job
         if: ${{ github.ref_type == 'tag' }}
@@ -73,7 +73,7 @@ jobs:
           name: dll
 
       - run: cd publish-6.0 && zip -r ../net6.0.zip ** && cd -
-      - run: cd publish-7.0 && zip -r ../net7.0.zip ** && cd -
+      - run: cd publish-8.0 && zip -r ../net8.0.zip ** && cd -
 
       - uses: LoremFooBar/action-automatic-releases@master
         with:
