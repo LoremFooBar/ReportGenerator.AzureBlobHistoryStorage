@@ -261,8 +261,8 @@
       },
       "ReportGenerator.Core": {
         "type": "Transitive",
-        "resolved": "5.2.1",
-        "contentHash": "HTeoW21yJLpJdUb7Yev0H29DzYbcCy5wYaEvcM3JbNdp0FqWPZvidAJqVAu+hYti/W6RYjGokFqhsHJDyAt/CQ==",
+        "resolved": "5.2.2",
+        "contentHash": "xmD53xdblrcVTBNJSmdDkGpIEIexSU6/VUhuKB+kOF0LTuVIsE3oZOeMQgdMv9VmpR45WGm+L0wF0KuUKQk1bg==",
         "dependencies": {
           "DotNetConfig": "1.0.6",
           "McMaster.NETCore.Plugins": "1.4.0",
@@ -359,7 +359,7 @@
         "dependencies": {
           "Azure.Storage.Blobs": "[12.19.1, )",
           "CliWrap": "[3.6.6, )",
-          "ReportGenerator.Core": "[5.2.1, )"
+          "ReportGenerator.Core": "[5.2.2, )"
         }
       }
     },
@@ -620,8 +620,8 @@
       },
       "ReportGenerator.Core": {
         "type": "Transitive",
-        "resolved": "5.2.1",
-        "contentHash": "HTeoW21yJLpJdUb7Yev0H29DzYbcCy5wYaEvcM3JbNdp0FqWPZvidAJqVAu+hYti/W6RYjGokFqhsHJDyAt/CQ==",
+        "resolved": "5.2.2",
+        "contentHash": "xmD53xdblrcVTBNJSmdDkGpIEIexSU6/VUhuKB+kOF0LTuVIsE3oZOeMQgdMv9VmpR45WGm+L0wF0KuUKQk1bg==",
         "dependencies": {
           "DotNetConfig": "1.0.6",
           "McMaster.NETCore.Plugins": "1.4.0",
@@ -714,7 +714,7 @@
         "dependencies": {
           "Azure.Storage.Blobs": "[12.19.1, )",
           "CliWrap": "[3.6.6, )",
-          "ReportGenerator.Core": "[5.2.1, )"
+          "ReportGenerator.Core": "[5.2.2, )"
         }
       }
     }
