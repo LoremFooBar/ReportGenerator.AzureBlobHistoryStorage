@@ -26,9 +26,9 @@
       },
       "ReportGenerator.Core": {
         "type": "Direct",
-        "requested": "[5.2.2, )",
-        "resolved": "5.2.2",
-        "contentHash": "xmD53xdblrcVTBNJSmdDkGpIEIexSU6/VUhuKB+kOF0LTuVIsE3oZOeMQgdMv9VmpR45WGm+L0wF0KuUKQk1bg==",
+        "requested": "[5.3.6, )",
+        "resolved": "5.3.6",
+        "contentHash": "GJhbIdRm6q0tnwVTh5emXt8qPM6uKQxVcf9wKrwb9/871gscHO8JI7wfKghPkBCi876N9jGJStSCV0hgVq/HFg==",
         "dependencies": {
           "DotNetConfig": "1.0.6",
           "McMaster.NETCore.Plugins": "1.4.0",
@@ -277,9 +277,9 @@
       },
       "ReportGenerator.Core": {
         "type": "Direct",
-        "requested": "[5.2.2, )",
-        "resolved": "5.2.2",
-        "contentHash": "xmD53xdblrcVTBNJSmdDkGpIEIexSU6/VUhuKB+kOF0LTuVIsE3oZOeMQgdMv9VmpR45WGm+L0wF0KuUKQk1bg==",
+        "requested": "[5.3.6, )",
+        "resolved": "5.3.6",
+        "contentHash": "GJhbIdRm6q0tnwVTh5emXt8qPM6uKQxVcf9wKrwb9/871gscHO8JI7wfKghPkBCi876N9jGJStSCV0hgVq/HFg==",
         "dependencies": {
           "DotNetConfig": "1.0.6",
           "McMaster.NETCore.Plugins": "1.4.0",
