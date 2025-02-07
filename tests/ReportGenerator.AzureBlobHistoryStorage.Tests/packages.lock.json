@@ -109,8 +109,11 @@
       },
       "CliWrap": {
         "type": "Transitive",
-        "resolved": "3.6.6",
-        "contentHash": "8/WnYKDjXjqMp9ktCygmeC6kDsmSEKF4riEYNy98+nD3wOKbuxqOjmhiFMalOYlM+mUqfs3SOEowF20+loDZHQ=="
+        "resolved": "3.7.1",
+        "contentHash": "2f5L/wjalAisJ9NEu9o5liobQQji47evLOYLf2kk1y/MGLmTZWDfGR0d8C5lNuJtUiHCZzBoTfJbizQHZ2rFaw==",
+        "dependencies": {
+          "System.Management": "9.0.0"
+        }
       },
       "DotNetConfig": {
         "type": "Transitive",
@@ -282,6 +285,11 @@
           "System.Text.Json": "6.0.9"
         }
       },
+      "System.CodeDom": {
+        "type": "Transitive",
+        "resolved": "9.0.0",
+        "contentHash": "oTE5IfuMoET8yaZP/vdvy9xO47guAv/rOhe4DODuFBN3ySprcQOlXqO3j+e/H/YpKKR5sglrxRaZ2HYOhNJrqA=="
+      },
       "System.Collections.Immutable": {
         "type": "Transitive",
         "resolved": "5.0.0",
@@ -312,6 +320,14 @@
         "type": "Transitive",
         "resolved": "6.0.0",
         "contentHash": "Rfm2jYCaUeGysFEZjDe7j1R4x6Z6BzumS/vUT5a1AA/AWJuGX71PoGB0RmpyX3VmrGqVnAwtfMn39OHR8Y/5+g=="
+      },
+      "System.Management": {
+        "type": "Transitive",
+        "resolved": "9.0.0",
+        "contentHash": "bVh4xAMI5grY5GZoklKcMBLirhC8Lqzp63Ft3zXJacwGAlLyFdF4k0qz4pnKIlO6HyL2Z4zqmHm9UkzEo6FFsA==",
+        "dependencies": {
+          "System.CodeDom": "9.0.0"
+        }
       },
       "System.Memory.Data": {
         "type": "Transitive",
@@ -367,7 +383,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Storage.Blobs": "[12.23.0, )",
-          "CliWrap": "[3.6.6, )",
+          "CliWrap": "[3.7.1, )",
           "ReportGenerator.Core": "[5.3.6, )"
         }
       }
@@ -480,8 +496,8 @@
       },
       "CliWrap": {
         "type": "Transitive",
-        "resolved": "3.6.6",
-        "contentHash": "8/WnYKDjXjqMp9ktCygmeC6kDsmSEKF4riEYNy98+nD3wOKbuxqOjmhiFMalOYlM+mUqfs3SOEowF20+loDZHQ=="
+        "resolved": "3.7.1",
+        "contentHash": "2f5L/wjalAisJ9NEu9o5liobQQji47evLOYLf2kk1y/MGLmTZWDfGR0d8C5lNuJtUiHCZzBoTfJbizQHZ2rFaw=="
       },
       "DotNetConfig": {
         "type": "Transitive",
@@ -731,7 +747,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Storage.Blobs": "[12.23.0, )",
-          "CliWrap": "[3.6.6, )",
+          "CliWrap": "[3.7.1, )",
           "ReportGenerator.Core": "[5.3.6, )"
         }
       }
