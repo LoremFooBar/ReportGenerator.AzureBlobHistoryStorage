@@ -24,7 +24,7 @@ public class PluginOptions
             SourceDirectory = sourceDirectory;
 
         if (commandLineArguments.TryGetValue("COMMITIDS", out string? commitIds)) {
-            CommitIds = commitIds.Split(new[] { ',', '\n', ' ' },
+            CommitIds = commitIds.Split([',', '\n', ' '],
                 StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
         }
 

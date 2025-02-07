@@ -11,7 +11,7 @@ public class When_Parsing_Arguments_With_Single_Dash : SpecificationBase
     {
         base.When();
 
-        _parsedArguments = CommandLineArgumentsParser.ParseCommandLineArguments(new[] { "-arg1:val1", "-arg2:val2" });
+        _parsedArguments = CommandLineArgumentsParser.ParseCommandLineArguments(["-arg1:val1", "-arg2:val2"]);
     }
 
     [Then]
