@@ -109,10 +109,10 @@
       },
       "CliWrap": {
         "type": "Transitive",
-        "resolved": "3.7.1",
-        "contentHash": "2f5L/wjalAisJ9NEu9o5liobQQji47evLOYLf2kk1y/MGLmTZWDfGR0d8C5lNuJtUiHCZzBoTfJbizQHZ2rFaw==",
+        "resolved": "3.8.0",
+        "contentHash": "BWQ71JuSq+sqg/ou5zDcUIIUMgHmZnsDALl5EvA19Qb5osGht8MlNo9xYFiek6CjQIzifqdmwb0aVkXdSC6g/A==",
         "dependencies": {
-          "System.Management": "9.0.0"
+          "System.Management": "9.0.1"
         }
       },
       "DotNetConfig": {
@@ -287,8 +287,8 @@
       },
       "System.CodeDom": {
         "type": "Transitive",
-        "resolved": "9.0.0",
-        "contentHash": "oTE5IfuMoET8yaZP/vdvy9xO47guAv/rOhe4DODuFBN3ySprcQOlXqO3j+e/H/YpKKR5sglrxRaZ2HYOhNJrqA=="
+        "resolved": "9.0.1",
+        "contentHash": "2J5uq+2smnj+u1jlyVJ6BGGqaK9fHcK/EwN7mbsuPqTI6dZr86br8Cg6o/5B+icQ9ANTvTDpJjnhDNtYYZijHQ=="
       },
       "System.Collections.Immutable": {
         "type": "Transitive",
@@ -323,10 +323,10 @@
       },
       "System.Management": {
         "type": "Transitive",
-        "resolved": "9.0.0",
-        "contentHash": "bVh4xAMI5grY5GZoklKcMBLirhC8Lqzp63Ft3zXJacwGAlLyFdF4k0qz4pnKIlO6HyL2Z4zqmHm9UkzEo6FFsA==",
+        "resolved": "9.0.1",
+        "contentHash": "CLEo9O6FuO4GQ3ZQkGssg9CJ2w2TN7GMFf3wHTc7YVWJV4xoyJRPw+XIDQnCcSUJCrHhrAWOO60cAX29EV5LFQ==",
         "dependencies": {
-          "System.CodeDom": "9.0.0"
+          "System.CodeDom": "9.0.1"
         }
       },
       "System.Memory.Data": {
@@ -383,7 +383,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Storage.Blobs": "[12.23.0, )",
-          "CliWrap": "[3.7.1, )",
+          "CliWrap": "[3.8.0, )",
           "ReportGenerator.Core": "[5.3.6, )"
         }
       }
@@ -496,8 +496,8 @@
       },
       "CliWrap": {
         "type": "Transitive",
-        "resolved": "3.7.1",
-        "contentHash": "2f5L/wjalAisJ9NEu9o5liobQQji47evLOYLf2kk1y/MGLmTZWDfGR0d8C5lNuJtUiHCZzBoTfJbizQHZ2rFaw=="
+        "resolved": "3.8.0",
+        "contentHash": "BWQ71JuSq+sqg/ou5zDcUIIUMgHmZnsDALl5EvA19Qb5osGht8MlNo9xYFiek6CjQIzifqdmwb0aVkXdSC6g/A=="
       },
       "DotNetConfig": {
         "type": "Transitive",
@@ -747,7 +747,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Storage.Blobs": "[12.23.0, )",
-          "CliWrap": "[3.7.1, )",
+          "CliWrap": "[3.8.0, )",
           "ReportGenerator.Core": "[5.3.6, )"
         }
       }
