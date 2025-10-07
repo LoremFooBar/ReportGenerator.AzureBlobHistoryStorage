@@ -49,6 +49,7 @@ public class GitRepositoryAccessor : IGitRepositoryAccessor
             .WithArguments(
                 $"config --local --add safe.directory {Utils.NormalizePathForGitSafeDirectory(_workingDirectory)}")
             .WithValidation(CommandResultValidation.ZeroExitCode)
+            .WithWorkingDirectory(_workingDirectory)
             .ExecuteAsync();
 
         await Cli.Wrap("git")
