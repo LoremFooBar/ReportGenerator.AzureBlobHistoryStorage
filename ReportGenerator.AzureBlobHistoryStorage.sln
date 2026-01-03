@@ -18,6 +18,7 @@ ProjectSection(SolutionItems) = preProject
 	LICENSE = LICENSE
 	.github\workflows\ci.yml = .github\workflows\ci.yml
 	renovate.json = renovate.json
+	.config\dotnet-tools.json = .config\dotnet-tools.json
 EndProjectSection
 EndProject
 Global

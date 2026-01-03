@@ -3,14 +3,11 @@ using CliWrap.Buffered;
 
 namespace ReportGenerator.AzureBlobHistoryStorage;
 
-public class GitRepositoryAccessor : IGitRepositoryAccessor
+public class GitRepositoryAccessor(string? workingDirectory) : IGitRepositoryAccessor
 {
-    private readonly string _workingDirectory;
+    private readonly string _workingDirectory = string.IsNullOrEmpty(workingDirectory) ? Environment.CurrentDirectory : workingDirectory;
     private bool _directoryIsSafe;
     private string? _repositoryPath;
-
-    public GitRepositoryAccessor(string? workingDirectory) => _workingDirectory =
-        string.IsNullOrEmpty(workingDirectory) ? Environment.CurrentDirectory : workingDirectory;
 
     public async Task<IEnumerable<string>> GetCommitIdsAsync(int numOfCommits)
     {
