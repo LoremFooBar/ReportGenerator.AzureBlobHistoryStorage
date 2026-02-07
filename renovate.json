@@ -17,6 +17,12 @@
         "bitbucket-pipelines.yml"
       ],
       "extends": ":semanticCommitType(ci)"
+    },
+    {
+      "matchPackageNames": [
+        "ReportGenerator.Core"
+      ],
+      "enabled": false
     }
   ]
 }
