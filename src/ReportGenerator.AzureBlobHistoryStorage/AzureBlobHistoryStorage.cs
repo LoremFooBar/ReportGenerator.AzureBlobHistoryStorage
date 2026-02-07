@@ -54,7 +54,8 @@ public class AzureBlobHistoryStorage : IHistoryStorage
             Pageable<BlobItem> blobs;
 
             try {
-                blobs = _blobContainerClient.GetBlobs(prefix: $"{_repositoryName}/{commitId}");
+                blobs = _blobContainerClient.GetBlobs(BlobTraits.None, BlobStates.None,
+                    $"{_repositoryName}/{commitId}/", CancellationToken.None);
             }
             catch (Exception ex) {
                 Console.WriteLine(ex);

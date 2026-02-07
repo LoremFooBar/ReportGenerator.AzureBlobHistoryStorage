@@ -66,7 +66,7 @@ public class HistoryStorageSpecificationBase : SpecificationBase
                 Mock.Of<Pageable<BlobItem>>(items => items.GetEnumerator() == FakeBlobEnumerator(commitId));
             blobContainerClientMock
                 .Setup(client =>
-                    client.GetBlobs(BlobTraits.None, BlobStates.None, $"{RepositoryName}/{commitId}",
+                    client.GetBlobs(It.IsAny<BlobTraits>(), It.IsAny<BlobStates>(), $"{RepositoryName}/{commitId}/",
                         CancellationToken.None))
                 .Returns(blobItems);
         }
