@@ -106,8 +106,8 @@
       },
       "CliWrap": {
         "type": "Transitive",
-        "resolved": "3.10.1",
-        "contentHash": "C+WzXwzpQsJVNqvuh19ZO/bw/vR43L+DC/CmvK+PATUBkail2AWYE6an17dOGgWaVGzF9sU28YwRwfNfkPrQdg=="
+        "resolved": "3.10.5",
+        "contentHash": "L5SghZThsAVhV8ucwwW5FLMzKj1Ps57JB8DM2bEjpBNTyGi1EDjDO7Mi39Yx1FoXM2fZ1l9j39xqlPsZI1QCJQ=="
       },
       "DotNetConfig": {
         "type": "Transitive",
@@ -347,7 +347,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Storage.Blobs": "[12.27.0, )",
-          "CliWrap": "[3.10.1, )",
+          "CliWrap": "[3.10.5, )",
           "ReportGenerator.Core": "[5.3.6, )"
         }
       }
@@ -457,8 +457,8 @@
       },
       "CliWrap": {
         "type": "Transitive",
-        "resolved": "3.10.1",
-        "contentHash": "C+WzXwzpQsJVNqvuh19ZO/bw/vR43L+DC/CmvK+PATUBkail2AWYE6an17dOGgWaVGzF9sU28YwRwfNfkPrQdg=="
+        "resolved": "3.10.5",
+        "contentHash": "L5SghZThsAVhV8ucwwW5FLMzKj1Ps57JB8DM2bEjpBNTyGi1EDjDO7Mi39Yx1FoXM2fZ1l9j39xqlPsZI1QCJQ=="
       },
       "DotNetConfig": {
         "type": "Transitive",
@@ -698,7 +698,7 @@
         "type": "Project",
         "dependencies": {
           "Azure.Storage.Blobs": "[12.27.0, )",
-          "CliWrap": "[3.10.1, )",
+          "CliWrap": "[3.10.5, )",
           "ReportGenerator.Core": "[5.3.6, )"
         }
       }
